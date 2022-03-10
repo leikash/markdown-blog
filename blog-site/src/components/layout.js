@@ -1,13 +1,14 @@
-import React from 'react'
-import Header from './header'
-import Footer from './footer'
+import React from "react"
+import Header from "./header"
+import Footer from "./footer"
 
-const Layout = ( props ) => {
+
+const Layout = (props) => {
     return (
         <div>
-            <Header/>
-                { props.children }
-            <Footer/>
+            <Header />
+            {props.children}
+            <Footer />
         </div>
     )
 }

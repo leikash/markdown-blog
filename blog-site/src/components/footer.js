@@ -4,7 +4,9 @@ const Footer = () => {
   return (
     <footer>
       <div>
-        We wish fuitful life { (new Date()).getFullYear() }
+        <p className='text-gray-300'>
+          We wish fruitful life, {(new Date()).getFullYear()}
+        </p>
       </div>
     </footer>
   )
