@@ -4,7 +4,8 @@ const Footer = () => {
   return (
     <footer>
       <div>
-        We wish fuitful life { (new Date()).getFullYear() }
+        <h1 className="text-green-700 font-bold underline">Leikash Blog</h1>
+        We wish fruitful life, { (new Date()).getFullYear() }
       </div>
     </footer>
   )
