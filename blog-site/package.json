@@ -15,6 +15,8 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.2",
+    "eslint": "^8.11.0",
+    "eslint-webpack-plugin": "^3.1.1",
     "gatsby": "^4.9.2",
     "gatsby-plugin-postcss": "^5.9.0",
     "postcss": "^8.4.8",
@@ -25,9 +27,8 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",
-    "eslint": "^8.10.0",
+    "babel-eslint": "^10.1.0",
     "eslint-plugin-react": "^7.29.3",
-    "eslint-webpack-plugin": "^3.1.1",
     "gatsby-plugin-eslint": "^4.0.2",
     "prettier": "^2.5.1"
   },
