@@ -20,9 +20,22 @@ const gatsbyRequiredRules = path.join(
 */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: "Leikash blog",
+    author: "Leikash",
+    category: ["React", "Webサイト構築"],
+    user: { name: "Leikash", email: "kashbellie@gmail.com" },
+  },
   plugins: [
     `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+    "gatsby-transformer-remark",
   /*
     {
       resolve: "gatsby-plugin-eslint",

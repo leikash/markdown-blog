@@ -1,3 +1,8 @@
+---
+title: "方針転換"
+date: "2022-03-13"
+---
+
 # 方針転換
 
 - [方針転換](#方針転換)
@@ -10,8 +15,9 @@
       - [2.2.3 動作確認](#223-動作確認)
       - [2.2 サンプル記事を作成](#22-サンプル記事を作成)
         - [2.2.1 フォルダ構成](#221-フォルダ構成)
-  - [4. Markdownを加工せずに公開](#4-markdownを加工せずに公開)
-  - [5. 記事にデコレーションをして公開](#5-記事にデコレーションをして公開)
+  - [3. Markdownを加工せずに公開](#3-markdownを加工せずに公開)
+    - [3.1. Markdown記事の取得](#31-markdown記事の取得)
+  - [4. 記事にデコレーションをして公開](#4-記事にデコレーションをして公開)
 
 ---
 
@@ -44,7 +50,7 @@ $ gatsby new blog-site https://github.com/gatsbyjs/gatsby-starter-hello-world
 
 ### 2.2 Tailwind CSSの導入  
 カスタマイズはしたいけど、CSSを本格的に勉強するわけではないので、時間短縮のためにこちらを導入します。  
-[Tailwind公式](https://tailwindcss.com/docs/guides/gatsby)を見ながらインストールします。
+[Tailwind CSSの手順](https://tailwindcss.com/docs/guides/gatsby)、[Gatsbyの手順](https://www.gatsbyjs.com/docs/how-to/styling/tailwind-css/)を見ながらインストールします。
 
 #### 2.2.1 インストール
 まずは、ターミナルからインストール
@@ -77,8 +83,16 @@ module.exports = {
   plugins: [],
 }
 ```
+Tailwind CSSの手順にはこれが書いていなくてハマりました。  
+postcss.config.jsをroot直下に作ります。
+```javascript
+// postcss.config.js
+module.exports = () => ({
+    plugins: [require("tailwindcss")],
+})
+```
 
-Tailwind CSSが全体に適用されるように、'./src/styles/global.css'、root直下に'gatsby-browser.js'を作成します。
+Tailwind CSSが全体に適用されるように、'./src/styles/global.css'、root直下に'gatsby-browser.js'を作成します。  
 ```css
 // global.css
 @tailwind base;
@@ -95,29 +109,38 @@ import './src/styles/global.css'
 ```bash
 $ yarn run develop
 ```
+```javascript
+//index.js
+  <h1 className="text-4xl font-bold underline text-green-800">
+    Leikash Blog
+  </h1>
+```
 
-適用前: タイトルのh1タグがそのまま表示れています。
 
-![picture 1](../blogImages/blog_changeDirection/1646871778753.png)  
+適用前: タイトルのh1タグがそのまま表示れています。  
+![picture 3](images/blog_changeDirection/1647171529390.png)  
 
-
-
-適用後: タイトルのh1タグがそのまま表示れています。
-
-適用されない。。。
-どこかで設定が間違っている
+適用後: 文字が緑になって、アンダーラインが追加されています。  
+![picture 4](images/blog_changeDirection/1647171608385.png)  
 
 #### 2.2 サンプル記事を作成
+記事を公開します。
 
 ##### 2.2.1 フォルダ構成
-src配下に以下のフォルダを作る
-draft // 下書き用
-post // 公開用
-blogImages // ブログ用の画像置き場、サイト用とは別にしておく。後でcloud上で管理する可能性あり
-images // サイト用の画像 
+ブログ内に画像を貼り付けるため、src配下に以下のフォルダを作成します。  
+|フォルダ|用途|
+|---|---|
+|draft|下書き用|
+|draft/image|下書きの画像置き場|
+|post|公開用|
+|draft/image|ブログ用の画像置き場、公開用|
 
-この記事もサンプルの一つです。
+## 3. Markdownを加工せずに公開
+見た目は悪くても公開できるように、  
+まずはMarkdownのまま公開してみます。
 
-## 4. Markdownを加工せずに公開
+### 3.1. Markdown記事の取得
+ここを参照して進めます。
+[GatsbyJSでのGraphQLの使い方](https://reffect.co.jp/react/gatsby-basic-tutorial-for-beginners-2)
 
-## 5. 記事にデコレーションをして公開
+## 4. 記事にデコレーションをして公開
