@@ -143,4 +143,7 @@ $ yarn run develop
 ここを参照して進めます。
 [GatsbyJSでのGraphQLの使い方](https://reffect.co.jp/react/gatsby-basic-tutorial-for-beginners-2)
 
+そのままやれば表示はされる。  
+ただし、HTMLをきれいに表示するにはもうちょっと工夫が必要
+
 ## 4. 記事にデコレーションをして公開
