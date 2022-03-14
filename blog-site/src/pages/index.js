@@ -16,7 +16,7 @@ const Home = ({ data }) => {
               <Link to={node.fields.slug}>
                 <h2>{node.frontmatter.title}</h2>
               </Link>
-              <h2>{node.frontmatter.date}</h2>
+                <p>{node.frontmatter.date}</p>
             </div>
           ))
         }

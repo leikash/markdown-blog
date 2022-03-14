@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "gatsby-plugin-sharp": "^4.9.1",
+    "gatsby-remark-images": "^6.9.1",
+    "gatsby-remark-relative-images": "^2.0.2",
     "gatsby-transformer-remark": "^5.9.1"
   }
 }

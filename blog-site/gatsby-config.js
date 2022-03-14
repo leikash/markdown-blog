@@ -27,7 +27,9 @@ module.exports = {
     user: { name: "Leikash", email: "kashbellie@gmail.com" },
   },
   plugins: [
+    // Tailwind CSSを使う
     "gatsby-plugin-postcss",
+    // サイトのファイルを参照する
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -35,7 +37,25 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    // Markdownファイルを表示するため
     "gatsby-transformer-remark",
+    // 画像を埋め込む
+    // 参照: https://reffect.co.jp/react/gatsby-basic-tutorial-for-beginners-4
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-relative-images`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 700,
+            },
+          },
+        ],
+      },
+    },
   /*
     {
       resolve: "gatsby-plugin-eslint",
