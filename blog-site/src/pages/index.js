@@ -3,6 +3,14 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 
 const Home = ({ data }) => {
+  const blogBody = (node) => {
+    console.log(node)
+    let htmlBody = node.html
+    console.log(typeof(htmlBody))
+
+    return { __html: htmlBody }
+  }
+
   return (
     <div>
       <Layout>
@@ -13,8 +21,8 @@ const Home = ({ data }) => {
           data.allMarkdownRemark.nodes.map(node => (
             <div key={node.id}>
               <h2>{node.frontmatter.title}</h2>
-              <div 
-              dangerouslySetInnerHTML={{ __html: node.html }} />
+              <h2>{node.frontmatter.date}</h2>
+              <div dangerouslySetInnerHTML={blogBody(node)} />
             </div>
           ))
         }
@@ -32,6 +40,7 @@ export const query = graphql`
         timeToRead
         frontmatter {
           title
+          date
         }
       }
     }

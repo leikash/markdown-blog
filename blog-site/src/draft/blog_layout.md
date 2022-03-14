@@ -1,5 +1,5 @@
 ---
-title: "Blog Design"
+title: "Blog Layout"
 date: "2022-03-20"
 ---
 
