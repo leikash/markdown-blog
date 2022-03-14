@@ -13,7 +13,8 @@ const Home = ({ data }) => {
           data.allMarkdownRemark.nodes.map(node => (
             <div key={node.id}>
               <h2>{node.frontmatter.title}</h2>
-              <div dangerouslySetInnerHTML={{ __html: node.html }} />
+              <div 
+              dangerouslySetInnerHTML={{ __html: node.html }} />
             </div>
           ))
         }
