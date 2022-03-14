@@ -1,5 +1,5 @@
 ---
-title: Markdownファイルをを公開
+title: Markdownファイルを公開
 date: 2022-03-14
 ---
 
