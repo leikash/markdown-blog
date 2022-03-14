@@ -1,1 +1,3 @@
-import "./src/styles/global.css"
+// サイト全体のレイアウトを初期化
+// スタイルの不備とmdファイルの不備を切り分けるため、一旦スタイルを外す。 2022/3/14
+// import "./src/styles/global.css"

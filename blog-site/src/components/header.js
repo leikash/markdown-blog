@@ -18,8 +18,8 @@ const Header = () => {
       <h2>{data.site.siteMetadata.title}</h2>
       <nav>
         <ul>
-          <li><Link to="/">top</Link></li>
-          <li><Link to="/about">about</Link></li>
+          <li><Link className="underline" to="/">top</Link></li>
+          <li><Link className="underline" to="/about">about</Link></li>
         </ul>
       </nav>
     </header>

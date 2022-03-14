@@ -1,3 +1,8 @@
+---
+title: "Blog Design"
+date: "2022-03-5"
+---
+
 # Blog Design
 
 ブログサイトを作るため、簡単な設計を行う
