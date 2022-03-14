@@ -27,15 +27,15 @@ module.exports = {
     user: { name: "Leikash", email: "kashbellie@gmail.com" },
   },
   plugins: [
-    `gatsby-plugin-postcss`,
+    "gatsby-plugin-postcss",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `src`,
+        name: "src",
         path: `${__dirname}/src/`,
       },
     },
-    `gatsby-transformer-remark`,
+    "gatsby-transformer-remark",
   /*
     {
       resolve: "gatsby-plugin-eslint",
