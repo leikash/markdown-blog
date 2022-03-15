@@ -37,6 +37,14 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    // サイト内の画像を表示する
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
     // Markdownファイルを表示するため
     "gatsby-transformer-remark",
     // 画像を埋め込む
@@ -56,7 +64,10 @@ module.exports = {
         ],
       },
     },
-  /*
+    // 画像表示のため。gatsby-imageでエラーになるため変更する
+    // https://www.gatsbyjs.com/plugins/gatsby-plugin-image/
+    `gatsby-plugin-image`,
+/* ESLintでエラーになるのでコメントアウトしておく
     {
       resolve: "gatsby-plugin-eslint",
       options: {
@@ -68,6 +79,6 @@ module.exports = {
         exclude: ["node_modules", "bower_components", ".cache", "public"],
       },
     },
-  */
+*/
   ],
 }

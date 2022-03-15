@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import { StaticImage } from "gatsby-plugin-image"
 
   /* html部分を外出しにする。作りかけなのでコメントアウト
   const blogBody = (node) => {
@@ -11,7 +12,6 @@ import Layout from "../components/layout"
     return { __html: htmlBody }
   }
   */
-
 
 export default function Post({ data }) {
   return (
