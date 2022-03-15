@@ -1,5 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
+import { StaticImage } from "gatsby-plugin-image"
 
 const Header = () => {
   const data = useStaticQuery(
@@ -15,6 +16,7 @@ const Header = () => {
   );
   return (
     <header>
+      <StaticImage src='../images/logo_browser_772201.png' alt="Leikash Blog"></StaticImage>
       <h2>{data.site.siteMetadata.title}</h2>
       <nav>
         <ul>

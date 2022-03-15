@@ -28,7 +28,7 @@ module.exports = {
   },
   plugins: [
     // Tailwind CSSを使う
-    "gatsby-plugin-postcss",
+    `gatsby-plugin-postcss`,
     // サイトのファイルを参照する
     {
       resolve: `gatsby-source-filesystem`,
@@ -46,7 +46,7 @@ module.exports = {
       },
     },
     // Markdownファイルを表示するため
-    "gatsby-transformer-remark",
+    `gatsby-transformer-remark`,
     // 画像を埋め込む
     // 参照: https://reffect.co.jp/react/gatsby-basic-tutorial-for-beginners-4
     `gatsby-plugin-sharp`,
@@ -64,10 +64,10 @@ module.exports = {
         ],
       },
     },
-    // 画像表示のため。gatsby-imageでエラーになるため変更する
+    // 画像表示のため。gatsby-imageは非推奨のため、gatsby-plugin-imageを使用する
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-image/
     `gatsby-plugin-image`,
-/* ESLintでエラーになるのでコメントアウトしておく
+    /* ESLintでエラーになるのでコメントアウトしておく
     {
       resolve: "gatsby-plugin-eslint",
       options: {
@@ -79,6 +79,6 @@ module.exports = {
         exclude: ["node_modules", "bower_components", ".cache", "public"],
       },
     },
-*/
+    */
   ],
 }
