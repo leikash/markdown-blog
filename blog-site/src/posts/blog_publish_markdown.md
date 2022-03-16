@@ -58,9 +58,17 @@ gatsby-config.jsを設定
 $ yarn add gatsby-plugin-image
 ```
 
+ロゴを入れることはできた。
+
 ---
 # 時間切れで作ってない。ここから再開する
 ---
+
+- [ ] postページのトップ画像をindexに入れる
+- [ ] warningの解消をする
+```console
+react_devtools_backend.js:3973 Warning: Each child in a list should have a unique "key" prop.
+```
 
 設定を入れます。
 ```javascript
