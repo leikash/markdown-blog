@@ -3,7 +3,6 @@ import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 
 const Home = ({ data }) => {
-
   return (
     <div>
       <Layout>

@@ -26,5 +26,15 @@
 			"titleBar.inactiveForeground": "#e7e7e799"
 		},
 		"peacock.remoteColor": "#215732"
+	},
+	"launch": {
+		"configurations": [
+			{
+				"type": "pwa-chrome",
+				"name": "localhost:8000",
+				"request": "launch",
+				"url": "localhost:8000"
+			}
+		]
 	}
 }

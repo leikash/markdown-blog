@@ -16,7 +16,7 @@ import { StaticImage } from "gatsby-plugin-image"
 export default function Post({ data }) {
   return (
     <Layout>
-      <StaticImage src="../posts/images/blog_test/1647299997194.png" alt="A mountain" />
+      <StaticImage src="../images/pedro-monteiro-HfIex7qwTlI-unsplash.jpg" alt="A mountain" />
       <p>Last Updated: {data.markdownRemark.frontmatter.date}</p>
       <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
     </Layout>
