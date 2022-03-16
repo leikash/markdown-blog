@@ -49,6 +49,7 @@ module.exports = {
     `gatsby-transformer-remark`,
     // 画像を埋め込む
     // 参照: https://reffect.co.jp/react/gatsby-basic-tutorial-for-beginners-4
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,

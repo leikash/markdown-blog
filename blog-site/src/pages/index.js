@@ -3,11 +3,10 @@ import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 
 const Home = ({ data }) => {
-
   return (
     <div>
       <Layout>
-        <h1 className="text-4xl font-bold underline text-green-800">
+        <h1>
           Leikash Blog
         </h1>
         {
