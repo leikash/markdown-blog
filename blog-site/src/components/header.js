@@ -14,15 +14,27 @@ const Header = () => {
       }
     `
   );
+  const ListLink = props => (
+    <li style={{ display: `inline-block`, marginRight: `1rem` }}>
+      <Link to={props.to}>{props.children}</Link>
+    </li>
+  )
   return (
-    <header>
-      <StaticImage 
-          src="../images/logo_browser_772201.png" 
-          alt="${data.site.siteMetadata.title}" 
-      />
+    <header style={{ marginBottom: `1.5rem` }}>
+
+      <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
+          <h3 style={{ display: `inline` }}>
+            <StaticImage 
+              src="../images/logo_browser_772201.png" 
+              alt="${data.site.siteMetadata.title}" 
+            />
+            <p>We wish fruitful life</p>
+          </h3>
+      </Link>
       <nav>
-        <ul>
-          <li><Link className="underline" to="/">top</Link></li>
+        <ul style={{ listStyle: `none`, float: `right` }}>
+          <ListLink to="/">Home</ListLink>
+          <ListLink to="/about">About</ListLink>
         </ul>
       </nav>
     </header>
