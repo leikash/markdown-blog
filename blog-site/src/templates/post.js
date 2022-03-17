@@ -7,18 +7,53 @@ import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 
 export default function Post({ data }) {
 
-  console.log('test log')
-
-  const topImage = getImage(data.markdownRemark.frontmatter.topImage)
-  const topImageTag = (topImage) => {
-      return(<StaticImage src='../images/pedro-monteiro-HfIex7qwTlI-unsplash.jpg' alt='Leikash Blog' />)
-      // この外出しの仕方がダメみたい。動的に表示されない。時間切れなので続きは後で。
-      // return(<GatsbyImage image={topImage} alt={data.markdownRemark.frontmatter.topImage.title} />)
+  // console.log('test log')
+// 記事のトップ画像を取り込む
+  const topImageObj = getImage(data.markdownRemark.frontmatter.topImage)
+/*
+  // 記事のトップ画像があるときのタグ
+  const preparedTopImage = () => {
+    return(
+      <GatsbyImage
+        image={topImageObj}
+        alt={data.markdownRemark.frontmatter.topImage.title}
+      />
+    )
   }
+  // 記事のトップ画像がないときのタグ
+  const noTopImage = () => {
+    return(
+      <StaticImage
+        src='../images/pedro-monteiro-HfIex7qwTlI-unsplash.jpg'
+        alt='Leikash Blog'
+        width={500}
+      />
+    )
+  }
+  // 記事のトップ画像があるかないかでタグを切り替える
+  let topImageTag
+  if(topImageObj){
+    topImageTag = preparedTopImage()
+  }else{
+    topImageTag = noTopImage()
+  }
+*/
   return (
     <Layout>
-      {topImageTag()}
-      <p>Last Updated: {data.markdownRemark.frontmatter.date}</p>
+      {topImageObj
+        ?
+          <GatsbyImage
+            image={topImageObj}
+            alt={data.markdownRemark.frontmatter.topImage.title}
+          />
+        :
+          <StaticImage
+            src='../images/pedro-monteiro-HfIex7qwTlI-unsplash.jpg'
+            alt='Leikash Blog'
+            width={500}
+          />
+      }
+      <p>Last updated: {data.markdownRemark.frontmatter.date}</p>
       <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
     </Layout>
   )
@@ -29,28 +64,13 @@ export const query = graphql`
       html
       frontmatter {
         title
+        date
         topImage {
           childImageSharp {
-            gatsbyImageData(width: 200)
-            fixed(width: 700) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 500)
           }
         }
       }
     }
   }
 `
-  /* html部分を外出しにする。作りかけなのでコメントアウト
-  const blogBody = (node) => {
-    // console.log(node)
-    let htmlBody = node.html
-    // console.log(typeof(htmlBody))
-
-    return { __html: htmlBody }
-  }
-  */
-
-//間違ってたときにもどす  <StaticImage src="../images/pedro-monteiro-HfIex7qwTlI-unsplash.jpg" alt="A mountain" />
-// 入門に載ってるやつ <StaticImage src={data.markdownRemark.frontmatter.topImage.childImageSharp.fixed.src} alt="A mountain" />
-//  エラーにはならないけど、写真が出ない     <StaticImage alt="A mountain">{data.markdownRemark.frontmatter.topImage.childImageSharp.base64}</StaticImage>
