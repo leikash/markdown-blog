@@ -1,7 +1,7 @@
 ---
 title: Markdownファイルを公開  
 date: 2022.3.14  
-topImage: "images/blog_publish_markdown/1647303718752.png"
+topImage: images/blog_publish_markdown/1647303718752.png
 
 ---
 
@@ -65,10 +65,7 @@ $ yarn add gatsby-plugin-image
 ---
 
 - [ ] postページのトップ画像をindexに入れる
-- [ ] warningの解消をする
-```console
-react_devtools_backend.js:3973 Warning: Each child in a list should have a unique "key" prop.
-```
+
 
 設定を入れます。
 ```javascript
