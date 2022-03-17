@@ -1,54 +1,30 @@
 import React from "react"
 import Layout from "../components/layout"
-import { graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
-const About = ({ data }) => {
-  // console.log(data)
+const About = () => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
+  )
   return (
     <div>
       <Layout>
         <h1 className="text-pink-400">
           About Page
         </h1>
-        <table>
-          <thead>
-            <tr>
-              <th>パス</th>
-              <th>サイズ</th>
-              <th>作成時間</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.allFile.nodes.map(node => (
-              <div key={node.id}>
-              <tr>
-                <td>{node.relativePath}</td>
-                <td>{node.size}</td>
-                <td>{node.ctime}</td>
-              </tr>
-              </div>
-            ))}
-          </tbody>
-        </table>
+        <p>{data.site.siteMetadata.title}</p>
       </Layout>
     </div>
   )
 }
 
-export const query = graphql`
-  {
-    allFile {
-      totalCount
-      nodes {
-        id
-        relativePath
-        size
-        name
-        extension
-        ctime
-      }
-    }
-  }
-`
-
 export default About
+

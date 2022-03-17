@@ -16,12 +16,13 @@ const Header = () => {
   );
   return (
     <header>
-      <StaticImage src='../images/logo_browser_772201.png' alt="Leikash Blog"></StaticImage>
-      <h2>{data.site.siteMetadata.title}</h2>
+      <StaticImage 
+          src="../images/logo_browser_772201.png" 
+          alt="${data.site.siteMetadata.title}" 
+      />
       <nav>
         <ul>
           <li><Link className="underline" to="/">top</Link></li>
-          <li><Link className="underline" to="/about">about</Link></li>
         </ul>
       </nav>
     </header>

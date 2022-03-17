@@ -18,7 +18,7 @@ const decidedImageTag = (node) => {
   }else{
     return(
       <StaticImage 
-        src="../images/pedro-monteiro-HfIex7qwTlI-unsplash.jpg" 
+        src="../images/proxyclick-visitor-management-system-nezoFjwiuLQ-unsplash.jpg" 
         alt="Leikash Blog" 
         width={200}
       />
@@ -30,9 +30,6 @@ const Home = ({ data }) => {
   return (
     <div>
       <Layout>
-        <h1>
-          Leikash Blog
-        </h1>
         {data.allMarkdownRemark.nodes.map(node => (
           <div key={node.id}>
             <Link to={node.fields.slug}>
