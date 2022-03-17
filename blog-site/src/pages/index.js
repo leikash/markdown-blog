@@ -3,10 +3,30 @@ import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const Home = ({ data }) => {
-  const thumbnailImageObj = (node) => {
-    return getImage(node.frontmatter.topImage)
+// 静的イメージ動的イメージのタグを決定して出力する
+const decidedImageTag = (node) => {
+  const thumbnailImageObj = (node) => (
+    getImage(node.frontmatter.topImage)
+  )
+  if(thumbnailImageObj(node)){
+    return(
+      <GatsbyImage 
+        image={thumbnailImageObj(node)} 
+        alt="${node.frontmatter.title}"
+      />
+    )
+  }else{
+    return(
+      <StaticImage 
+        src="../images/pedro-monteiro-HfIex7qwTlI-unsplash.jpg" 
+        alt="Leikash Blog" 
+        width={200}
+      />
+    )
   }
+}
+
+const Home = ({ data }) => {
   return (
     <div>
       <Layout>
@@ -17,19 +37,7 @@ const Home = ({ data }) => {
           <div key={node.id}>
             <Link to={node.fields.slug}>
               <h2>{node.frontmatter.title}</h2>
-              {thumbnailImageObj(node)
-                ?
-                  <GatsbyImage 
-                    image={thumbnailImageObj(node)}
-                    alt="${node.frontmatter.title}"
-                  />
-                :
-                  <StaticImage 
-                    src='../images/pedro-monteiro-HfIex7qwTlI-unsplash.jpg' 
-                    alt='Leikash Blog' 
-                    width={200}
-                  />
-              }
+              {decidedImageTag(node)}
             </Link>
               <p>{node.frontmatter.date}</p>
           </div>
@@ -38,8 +46,6 @@ const Home = ({ data }) => {
     </div>
   )
 }
-
-//              {thumbnailImageTag(node)}
 
 export const query = graphql`
   {
