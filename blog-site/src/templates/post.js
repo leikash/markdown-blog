@@ -43,12 +43,12 @@ export default function Post({ data }) {
       {topImageObj
         ?
           <GatsbyImage
-            image={topImageObj}
-            alt={data.markdownRemark.frontmatter.topImage.title}
+            image={topImageObj} 
+            alt="${data.markdownRemark.frontmatter.topImage.title}"
           />
         :
           <StaticImage
-            src='../images/pedro-monteiro-HfIex7qwTlI-unsplash.jpg'
+            src='../images/pedro-monteiro-HfIex7qwTlI-unsplash.jpg' 
             alt='Leikash Blog'
             width={500}
           />

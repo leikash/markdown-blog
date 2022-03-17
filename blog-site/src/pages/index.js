@@ -21,12 +21,12 @@ const Home = ({ data }) => {
                 ?
                   <GatsbyImage 
                     image={thumbnailImageObj(node)}
-                    alt={node.frontmatter.title}
+                    alt="${node.frontmatter.title}"
                   />
                 :
-                  <StaticImage
-                    src='../images/pedro-monteiro-HfIex7qwTlI-unsplash.jpg'
-                    alt='Leikash Blog'
+                  <StaticImage 
+                    src='../images/pedro-monteiro-HfIex7qwTlI-unsplash.jpg' 
+                    alt='Leikash Blog' 
                     width={200}
                   />
               }
