@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 
 const About = ({ data }) => {
-  console.log(data)
+  // console.log(data)
   return (
     <div>
       <Layout>
@@ -20,11 +20,13 @@ const About = ({ data }) => {
           </thead>
           <tbody>
             {data.allFile.nodes.map(node => (
+              <div key={node.id}>
               <tr>
                 <td>{node.relativePath}</td>
                 <td>{node.size}</td>
                 <td>{node.ctime}</td>
               </tr>
+              </div>
             ))}
           </tbody>
         </table>
@@ -38,6 +40,7 @@ export const query = graphql`
     allFile {
       totalCount
       nodes {
+        id
         relativePath
         size
         name

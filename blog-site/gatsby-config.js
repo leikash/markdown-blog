@@ -68,6 +68,14 @@ module.exports = {
     // 画像表示のため。gatsby-imageは非推奨のため、gatsby-plugin-imageを使用する
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-image/
     `gatsby-plugin-image`,
+    // スタイルを整えるために追加
+    // 参照 https://npmja.com/tuto3.php
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
     /* ESLintでエラーになるのでコメントアウトしておく
     {
       resolve: "gatsby-plugin-eslint",
