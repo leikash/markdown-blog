@@ -12,6 +12,19 @@ module.exports = {
     user: { name: "Leikash", email: "kashbellie@gmail.com" },
   },
   plugins: [
+    // メタデータ管理に使用する
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Leikash blog`,
+        short_name: `Leikash blog`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `src/images/computer_laptop_angle2.png`
+      },
+    },
     // Tailwind CSSを使う
     `gatsby-plugin-postcss`,
     // サイトのファイルを参照する

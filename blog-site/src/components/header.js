@@ -24,11 +24,13 @@ const Header = () => {
     <header style={{ marginBottom: `1.5rem` }}>
       <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
           <h3 style={{ display: `inline` }}>
-            <StaticImage 
-              src="../images/logo_browser_772201.png" 
-              alt="${data.site.siteMetadata.title}" 
-            />
-            <p>We wish fruitful life</p>
+            <div className="text-center">
+              <StaticImage 
+                src="../images/logo_browser_772201.png" 
+                alt="${data.site.siteMetadata.title}" 
+              />
+            </div>
+            <div className="text-center text-gray-400 font-sans mb-3">We wish fruitful life</div>
           </h3>
       </Link>
       <nav>
