@@ -22,7 +22,7 @@ module.exports = {
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `standalone`,
-        icon: `src/images/computer_laptop_angle2.png`
+        icon: `src/images/icon_book_772201_2.png`
       },
     },
     // Tailwind CSSを使う
