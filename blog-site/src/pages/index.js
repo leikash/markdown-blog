@@ -20,7 +20,7 @@ const decidedImageTag = (node) => {
       <StaticImage 
         src="../images/proxyclick-visitor-management-system-nezoFjwiuLQ-unsplash.jpg" 
         alt="Leikash Blog" 
-        width={200}
+        width={300}
       />
     )
   }
@@ -33,22 +33,22 @@ const Home = ({ data }) => {
         <main>
           {data.allMarkdownRemark.nodes.map(node => (
             <div key={node.id}>
-              <ul>
-                <li>
+              <div className="grid grid-cols-2 gap-3 mb-7">
+                <div>
                   <Link to={node.fields.slug}>
-                    <h2>{node.frontmatter.title}</h2>
+                    <h2 className="font-bold text-gray-800">
+                      {node.frontmatter.title}
+                    </h2>
+                    <p className="text-right">
+                      {decidedImageTag(node)}
+                      {node.frontmatter.date}
+                    </p>
                   </Link>
-                </li>
-                <li>
-                  <Link to={node.fields.slug}>
-                    {decidedImageTag(node)}
-                    <p>{node.frontmatter.date}</p>
-                  </Link>
-                </li>
-                <li>
+                </div>
+                <div>
                   {node.frontmatter.summary}
-                </li>
-              </ul>
+                </div>
+              </div>
             </div>
           ))}
         </main>
@@ -71,7 +71,7 @@ export const query = graphql`
           date
           topImage {
             childImageSharp {
-              gatsbyImageData(width: 200)
+              gatsbyImageData(width: 300)
             }
           }
           summary

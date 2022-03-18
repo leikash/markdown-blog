@@ -37,6 +37,7 @@ const Header = () => {
           <ListLink to="/about">About</ListLink>
         </ul>
       </nav>
+      <br/>
     </header>
   )
 }
