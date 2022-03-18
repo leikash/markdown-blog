@@ -1,19 +1,25 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+const ListLink = props => (
+  <li style={{ display: `inline-block`, marginRight: `1rem` }}>
+    <Link to={props.to}>{props.children}</Link>
+  </li>
+)
+
 const Footer = () => {
   return (
-    <footer>
+    <footer  style={{ marginBottom: `1.5rem` }}>
       <div>
-      <nav>
-        <ul>
-          <li><Link className="underline" to="/">top</Link></li>
-          <li><Link className="underline" to="/about">about</Link></li>
-        </ul>
-      </nav>
-        <p className='text-gray-300'>
-          We wish fruitful life, {(new Date()).getFullYear()}
-        </p>
+        <nav>
+          <ul style={{ listStyle: `none`, float: `right` }}>
+            <ListLink to="/">Home</ListLink>
+            <ListLink to="/about">About</ListLink>
+          </ul>
+        </nav>
+          <p className='text-pink-300'>
+            We wish fruitful life, {(new Date()).getFullYear()}
+          </p>
       </div>
     </footer>
   )

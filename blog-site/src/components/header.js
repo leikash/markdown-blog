@@ -19,9 +19,9 @@ const Header = () => {
       <Link to={props.to}>{props.children}</Link>
     </li>
   )
+
   return (
     <header style={{ marginBottom: `1.5rem` }}>
-
       <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
           <h3 style={{ display: `inline` }}>
             <StaticImage 
