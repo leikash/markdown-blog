@@ -36,7 +36,7 @@ const Home = ({ data }) => {
               <div className="grid grid-cols-2 gap-3 mb-7">
                 <div>
                   <Link to={node.fields.slug}>
-                    <h2 className="font-bold text-gray-800">
+                    <h2 className="font-bold text-gray-700">
                       {node.frontmatter.title}
                     </h2>
                     <p className="text-right">
