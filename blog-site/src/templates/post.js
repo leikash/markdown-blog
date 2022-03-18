@@ -30,9 +30,11 @@ const decidedTopImageTag = (data) => {
 const Post = ({ data }) => {
   return (
     <Layout>
-      {decidedTopImageTag(data)}
-      <p>Last updated: {data.markdownRemark.frontmatter.date}</p>
-      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+      <article>
+        {decidedTopImageTag(data)}
+        <p>Last updated: {data.markdownRemark.frontmatter.date}</p>
+        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+      </article>
     </Layout>
   )
 }

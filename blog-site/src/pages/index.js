@@ -30,15 +30,28 @@ const Home = ({ data }) => {
   return (
     <div>
       <Layout>
-        {data.allMarkdownRemark.nodes.map(node => (
-          <div key={node.id}>
-            <Link to={node.fields.slug}>
-              <h2>{node.frontmatter.title}</h2>
-              {decidedImageTag(node)}
-            </Link>
-              <p>{node.frontmatter.date}</p>
-          </div>
-        ))}
+        <main>
+          {data.allMarkdownRemark.nodes.map(node => (
+            <div key={node.id}>
+              <ul>
+                <li>
+                  <Link to={node.fields.slug}>
+                    <h2>{node.frontmatter.title}</h2>
+                  </Link>
+                </li>
+                <li>
+                  <Link to={node.fields.slug}>
+                    {decidedImageTag(node)}
+                    <p>{node.frontmatter.date}</p>
+                  </Link>
+                </li>
+                <li>
+                  {node.frontmatter.summary}
+                </li>
+              </ul>
+            </div>
+          ))}
+        </main>
       </Layout>
     </div>
   )
@@ -61,6 +74,7 @@ export const query = graphql`
               gatsbyImageData(width: 200)
             }
           }
+          summary
         }
       }
     }
