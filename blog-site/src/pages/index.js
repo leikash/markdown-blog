@@ -30,7 +30,6 @@ const Home = ({ data }) => {
   return (
     <div>
       <Layout>
-        <main>
           {data.allMarkdownRemark.nodes.map(node => (
             <div key={node.id}>
               <div className="grid grid-cols-2 gap-3 mb-7">
@@ -51,7 +50,6 @@ const Home = ({ data }) => {
               </div>
             </div>
           ))}
-        </main>
       </Layout>
     </div>
   )

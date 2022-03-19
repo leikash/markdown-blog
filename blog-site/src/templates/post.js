@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
+import styled from "styled-components"
 
 // const defaultTopImage = "<StaticImage src='../images/logo_browser_772201.png' alt='Leikash Blog'></StaticImage>"
 
@@ -27,14 +28,15 @@ const decidedTopImageTag = (data) => {
     )
   }
 }
+
 const Post = ({ data }) => {
   return (
     <Layout>
-      <article>
+      <ArticleWrapper>
         {decidedTopImageTag(data)}
         <p>Last updated: {data.markdownRemark.frontmatter.date}</p>
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-      </article>
+      </ArticleWrapper>
     </Layout>
   )
 }
@@ -57,4 +59,19 @@ export const query = graphql`
     }
   }
 `
+const ArticleWrapper = styled.article`
+  max-width: 750px;
+  margin: 0 auto;
+
+  .date {
+    font-weight: 700;
+    time {
+      font-size: 1.4rem;
+    }
+  }
+  .keyvisual {
+    text-align: center;
+  }
+`
+
 export default Post

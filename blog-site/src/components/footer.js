@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import styled from "styled-components"
 
 const ListLink = props => (
   <li style={{ display: `inline-block`, marginRight: `1rem` }}>
@@ -9,7 +10,7 @@ const ListLink = props => (
 
 const Footer = () => {
   return (
-    <footer  style={{ marginBottom: `1.5rem` }}>
+    <FooterWrapper style={{ marginBottom: `1.5rem` }}>
       <div>
         <nav>
           <ul style={{ listStyle: `none`, float: `right` }}>
@@ -17,12 +18,16 @@ const Footer = () => {
             <ListLink to="/about">About</ListLink>
           </ul>
         </nav>
-          <p className='text-pink-300'>
+          <p className="text-center text-pink-300  font-sans">
             We wish fruitful life, {(new Date()).getFullYear()}
           </p>
       </div>
-    </footer>
+    </FooterWrapper>
   )
 }
+
+const FooterWrapper = styled.footer`
+text-align: center;
+`
 
 export default Footer

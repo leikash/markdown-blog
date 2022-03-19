@@ -6,9 +6,17 @@ summary: 記事画面のレイアウトを整えるやり方を書いていき�
 
 # 記事画面のレイアウトを整える
 
-## Tailwind CSSを導入
+## Tailwind CSSを導入（中止）
 
-CSSをあまり知らずに自由にカスタマイズができそうなので導入します。
+CSSをあまり知らずに自由にカスタマイズができそうなので導入します。  
+⇒MarkdownのHTML変換後のスタイルの当て方がよくわからないので中止します。  
+
+## 他の方法を検討
+CSS in JSの勉強も兼ねて、"Styled Components"を導入します。  
+ここのサイトに詳しく書いてあったので、ここを参考に実装します。  
+[Gatsbyブログサイト移行物語](https://ginneko-atelier.com/blogs/entry484/)  
+
+[ここの途中まで実施](https://ginneko-atelier.com/blogs/entry406/)  
 
 ### 見出しと分かるようにする
 Markdownではこのように記載していますが、表示はどこが見出しか分かりません。  

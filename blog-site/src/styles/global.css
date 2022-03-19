@@ -10,7 +10,7 @@ https://ginneko-atelier.com/blogs/entry484/#%E3%81%9B%E3%81%A3%E3%81%8B%E3%81%8F
     --black: #333;
 }
 html {
-    font-size: 62.5%;
+    font-size: 62.5%;;
 }
 body {
     --font: var(--font);

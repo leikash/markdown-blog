@@ -20,7 +20,7 @@ summary: 何を作るか整理するためにブログサイトの設計を書�
 参考:  
 - [microCMSブログをオープンソース化しました](https://blog.microcms.io/open-source-the-blog/)
 - [ブログをおしゃれにする方法！デザインルール19個を解説します！](https://www.tsuzukiblog.org/blog-design/)  
-- [サルカワ](https://saruwakakun.com/)
+- [サルワカ](https://saruwakakun.com/)
 
 ### 2-1. 記事の要素をリストアップする
 #### 記事リストの要素
