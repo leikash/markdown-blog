@@ -3,29 +3,6 @@ import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 
-// 静的イメージ動的イメージのタグを決定して出力する
-const decidedImageTag = (node) => {
-  const thumbnailImageObj = (node) => (
-    getImage(node.frontmatter.topImage)
-  )
-  if(thumbnailImageObj(node)){
-    return(
-      <GatsbyImage 
-        image={thumbnailImageObj(node)} 
-        alt="${node.frontmatter.title}"
-      />
-    )
-  }else{
-    return(
-      <StaticImage 
-        src="../images/proxyclick-visitor-management-system-nezoFjwiuLQ-unsplash.jpg" 
-        alt="Leikash Blog" 
-        width={300}
-      />
-    )
-  }
-}
-
 const Home = ({ data }) => {
   return (
     <div>
@@ -54,6 +31,30 @@ const Home = ({ data }) => {
     </div>
   )
 }
+
+// 静的イメージ動的イメージのタグを決定して出力する
+const decidedImageTag = (node) => {
+  const thumbnailImageObj = (node) => (
+    getImage(node.frontmatter.topImage)
+  )
+  if(thumbnailImageObj(node)){
+    return(
+      <GatsbyImage 
+        image={thumbnailImageObj(node)} 
+        alt="${node.frontmatter.title}"
+      />
+    )
+  }else{
+    return(
+      <StaticImage 
+        src="../images/proxyclick-visitor-management-system-nezoFjwiuLQ-unsplash.jpg" 
+        alt="Leikash Blog" 
+        width={300}
+      />
+    )
+  }
+}
+
 
 export const query = graphql`
   {
