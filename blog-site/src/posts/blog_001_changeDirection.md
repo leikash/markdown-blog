@@ -98,7 +98,7 @@ module.exports = () => ({
 
 Tailwind CSSが全体に適用されるように、'./src/styles/global.css'、root直下に'gatsby-browser.js'を作成します。  
 ```css
-// global.css
+/* global.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

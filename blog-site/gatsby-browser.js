@@ -1,3 +1,4 @@
 // サイト全体のレイアウトを初期化
-// スタイルの不備とmdファイルの不備を切り分けるため、一旦スタイルを外す。 2022/3/14
 import "./src/styles/global.css"
+import "./src/styles/prismjs/init.css"
+import "./src/styles/prismjs/prism.css"

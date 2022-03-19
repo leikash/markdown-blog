@@ -74,5 +74,25 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    // Prismの導入
+    // https://o-alquimista.com/blogs/gatsby-contentful/
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-code-titles`, //ファイルのタイトルを表示
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false, //行数を出したい場合trueに。
+              noInlineHighlight: false,
+            },
+          },
+        ],
+      },
+    },
   ],
 }
