@@ -69,12 +69,12 @@ export const query = graphql`
         frontmatter {
           title
           date
+          summary
           topImage {
             childImageSharp {
               gatsbyImageData(width: 300)
             }
           }
-          summary
         }
       }
     }
