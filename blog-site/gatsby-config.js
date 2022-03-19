@@ -53,6 +53,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          // Markdownファイルの中の画像を表示する
           `gatsby-remark-relative-images`,
           {
             resolve: `gatsby-remark-images`,
@@ -76,7 +77,6 @@ module.exports = {
         ],
       },
     },
-
     // 画像表示のため。gatsby-imageは非推奨のため、gatsby-plugin-imageを使用する
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-image/
     `gatsby-plugin-image`,
