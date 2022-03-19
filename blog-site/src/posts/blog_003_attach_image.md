@@ -33,11 +33,8 @@ gatsby-config.jsを設定
 $ yarn add gatsby-plugin-image
 ```
 
-ロゴを入れることはできた。
+ロゴを入れることができました。
 
----
-# 時間切れで作ってない。ここから再開する
----
 
 - [ ] postページのトップ画像をindexに入れる
 

@@ -47,7 +47,10 @@ export const query = graphql`
         date
         topImage {
           childImageSharp {
-            gatsbyImageData(width: 500)
+            gatsbyImageData(
+              width: 500
+              placeholder: BLURRED
+            )
           }
         }
       }
