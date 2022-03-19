@@ -43,12 +43,12 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    // Markdownファイルを表示するため
-    `gatsby-transformer-remark`,
     // 画像を埋め込む
     // 参照: https://reffect.co.jp/react/gatsby-basic-tutorial-for-beginners-4
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    // Markdownファイルを表示するため
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -60,26 +60,8 @@ module.exports = {
               maxWidth: 700,
             },
           },
-        ],
-      },
-    },
-    // 画像表示のため。gatsby-imageは非推奨のため、gatsby-plugin-imageを使用する
-    // https://www.gatsbyjs.com/plugins/gatsby-plugin-image/
-    `gatsby-plugin-image`,
-    // スタイルを整えるために追加
-    // 参照 https://npmja.com/tuto3.php
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    // Prismの導入
-    // https://o-alquimista.com/blogs/gatsby-contentful/
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
+          // Prismの導入 gatsby-transformer-remarkが競合するため、入れ子で記載する
+          // https://o-alquimista.com/blogs/gatsby-contentful/
           `gatsby-remark-code-titles`, //ファイルのタイトルを表示
           {
             resolve: `gatsby-remark-prismjs`,
@@ -92,6 +74,18 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+
+    // 画像表示のため。gatsby-imageは非推奨のため、gatsby-plugin-imageを使用する
+    // https://www.gatsbyjs.com/plugins/gatsby-plugin-image/
+    `gatsby-plugin-image`,
+    // スタイルを整えるために追加
+    // 参照 https://npmja.com/tuto3.php
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
       },
     },
   ],
