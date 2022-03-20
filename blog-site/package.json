@@ -37,6 +37,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-typography": "^0.16.20",
+    "styled-components": "^5.3.3",
     "tailwindcss": "^3.0.23",
     "typography": "^0.16.21",
     "typography-theme-fairy-gates": "^0.16.19"
