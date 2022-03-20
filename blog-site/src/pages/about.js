@@ -17,7 +17,7 @@ const About = () => {
   return (
     <div>
       <Layout>
-        <h1 className="text-pink-400">
+        <h1>
           About Page
         </h1>
         <p>{data.site.siteMetadata.title}</p>

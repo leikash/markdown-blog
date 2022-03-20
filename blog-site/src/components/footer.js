@@ -18,7 +18,7 @@ const Footer = () => {
             <ListLink to="/about">About</ListLink>
           </ul>
         </nav>
-          <p className="text-center text-pink-300  font-sans">
+          <p>
             We wish fruitful life, {(new Date()).getFullYear()}
           </p>
       </div>

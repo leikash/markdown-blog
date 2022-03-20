@@ -26,7 +26,7 @@ module.exports = {
       },
     },
     // Tailwind CSSを使う
-    `gatsby-plugin-postcss`,
+    // `gatsby-plugin-postcss`,
     // サイトのファイルを参照する
     {
       resolve: `gatsby-source-filesystem`,
