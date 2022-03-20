@@ -64,16 +64,18 @@ summary: 何を作るか整理するためにブログサイトの設計を書�
 - 検索窓
 - 記事の目次（スクロール後固定）
 
-[配色案](https://saruwakakun.com/life/colors#greenn)
-#8BC34A
-#9CCC65
-#FF8A65
+[配色案](https://saruwakakun.com/life/colors#greenn)  
+#8BC34A  
+#9CCC65  
+#FF8A65  
 ---
 
-#79BD9A 
-#A8DBA8 
-#EFEFEF 
-#757575
+#79BD9A  
+#A8DBA8  
+#EFEFEF  
+#757575 
+
+[配色案　その２](https://www.colordic.org/colorscheme/4111)
 
 ---
 

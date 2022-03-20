@@ -2,31 +2,38 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
+import { BlogListWrapper } from "../styles/blog-list-style"
 
 const Home = ({ data }) => {
   return (
     <div>
       <Layout>
+        <BlogListWrapper>
           {data.allMarkdownRemark.nodes.map(node => (
             <div key={node.id}>
-              <div className="grid grid-cols-2 gap-3 mb-7">
-                <div>
-                  <Link to={node.fields.slug}>
-                    <h2 className="font-bold text-gray-800">
+                <li>
+                  <h2>
+                    <Link 
+                      to={node.fields.slug} 
+                    >
                       {node.frontmatter.title}
-                    </h2>
-                    <div className="text-right">
-                      {decidedImageTag(node)}
-                      {node.frontmatter.date}
-                    </div>
-                  </Link>
-                </div>
-                <div>
+                    </Link>
+                  </h2>
+                </li>
+                <li>
+                  <div>
+                    {decidedImageTag(node)}
+                  </div>
+                </li>
+                <li>
+                  {node.frontmatter.date}
+                </li>
+                <li>
                   {node.frontmatter.summary}
-                </div>
-              </div>
+                </li>
             </div>
           ))}
+        </BlogListWrapper>
       </Layout>
     </div>
   )

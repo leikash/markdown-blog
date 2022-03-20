@@ -20,10 +20,12 @@ export const BlogListWrapper = styled.ol`
         margin-bottom: 20px;
         a {
             color: var(--black);
-            text-decoration: none ;
+            text-decoration: none;
         }
         h2 {
+            font-weight: bold;
             font-size: 18px;
+            color: #00533f;
         }
     }
     .thumbnail {

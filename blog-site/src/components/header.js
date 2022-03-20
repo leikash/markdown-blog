@@ -17,7 +17,7 @@ const Header = () => {
   );
   return (
     <HeaderWrapper>
-      <Link>
+      <Link to="/">
           <h3>
             <div className="text-center">
               <StaticImage 
@@ -67,7 +67,12 @@ const HeaderWrapper = styled.header`
       a {
         text-decoration: none;
         color: var(--black);
+        font-weight: lighter;
+      }
+      a:hober{
+        text-decoration: underline;
         font-weight: bold;
+        color: darkgray;
       }
     }
   }
