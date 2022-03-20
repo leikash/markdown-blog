@@ -2,18 +2,16 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
-import { BlogListWrapper } from "../styles/blog-list-style"
 
 const Home = ({ data }) => {
   return (
     <div>
       <Layout>
-        <BlogListWrapper>
+        <div>
           {data.allMarkdownRemark.nodes.map(node => (
             <div key={node.id}>
-              <Link 
-                  to={node.fields.slug}>
-                <li><div>
+              <Link to={node.fields.slug}>
+                <li>
                   <h2>
                       {node.frontmatter.title}
                   </h2>
@@ -21,16 +19,14 @@ const Home = ({ data }) => {
                     {decidedImageTag(node)}
                   </div>
                   {node.frontmatter.date}
-                </div></li>
+                </li>
               </Link>
                 <li>
-                  <div className="thumbnail">
                     {node.frontmatter.summary}
-                  </div>
                 </li>
             </div>
           ))}
-        </BlogListWrapper>
+        </div>
       </Layout>
     </div>
   )

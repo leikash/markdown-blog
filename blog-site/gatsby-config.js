@@ -82,7 +82,7 @@ module.exports = {
     `gatsby-plugin-image`,
     // スタイルを整えるために追加
     // 参照 https://npmja.com/tuto3.php
-    /* styled-componentsを使うため、typographyを無効にする
+    /*
     {
       resolve: `gatsby-plugin-typography`,
       options: {

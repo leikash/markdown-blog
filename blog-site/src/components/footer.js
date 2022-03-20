@@ -1,19 +1,18 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled from "styled-components"
 
 const ListLink = props => (
-  <li style={{ display: `inline-block`, marginRight: `1rem` }}>
+  <li>
     <Link to={props.to}>{props.children}</Link>
   </li>
 )
 
 const Footer = () => {
   return (
-    <FooterWrapper style={{ marginBottom: `1.5rem` }}>
+    <footer>
       <div>
         <nav>
-          <ul style={{ listStyle: `none`, float: `right` }}>
+          <ul>
             <ListLink to="/">Home</ListLink>
             <ListLink to="/about">About</ListLink>
           </ul>
@@ -22,12 +21,8 @@ const Footer = () => {
             We wish fruitful life, {(new Date()).getFullYear()}
           </p>
       </div>
-    </FooterWrapper>
+    </footer>
   )
 }
-
-const FooterWrapper = styled.footer`
-text-align: center;
-`
 
 export default Footer
