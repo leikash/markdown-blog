@@ -90,7 +90,7 @@ module.exports = {
       },
     },
     */
-    // google fontsを入れる
+    /* google fontsを入れる
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
@@ -101,5 +101,6 @@ module.exports = {
         display: 'swap'
       }
     }
+    */
   ],
 }

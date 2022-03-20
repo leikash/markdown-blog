@@ -6,11 +6,12 @@
 https://ginneko-atelier.com/blogs/entry484/#%E3%81%9B%E3%81%A3%E3%81%8B%E3%81%8F%E3%81%AA%E3%81%AE%E3%81%A7styled-components%E3%81%A7%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%BF%E3%82%8B
 */
 :root {
-    --font: font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    --font: font-family: "Noto Sans JP", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     --black: #333;
 }
 html {
-    font-size: 62.5%;;
+    font-size: 62.5%;
 }
 body {
     --font: var(--font);

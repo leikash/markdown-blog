@@ -17,6 +17,7 @@ export const BlogListWrapper = styled.ol`
     list-style: none;
     padding: 0;
     li {
+        display: inline-flex;
         margin-bottom: 20px;
         a {
             color: var(--black);

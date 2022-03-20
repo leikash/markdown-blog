@@ -11,25 +11,22 @@ const Home = ({ data }) => {
         <BlogListWrapper>
           {data.allMarkdownRemark.nodes.map(node => (
             <div key={node.id}>
-                <li>
+              <Link 
+                  to={node.fields.slug}>
+                <li><div>
                   <h2>
-                    <Link 
-                      to={node.fields.slug} 
-                    >
                       {node.frontmatter.title}
-                    </Link>
                   </h2>
-                </li>
-                <li>
                   <div>
                     {decidedImageTag(node)}
                   </div>
-                </li>
-                <li>
                   {node.frontmatter.date}
-                </li>
+                </div></li>
+              </Link>
                 <li>
-                  {node.frontmatter.summary}
+                  <div className="thumbnail">
+                    {node.frontmatter.summary}
+                  </div>
                 </li>
             </div>
           ))}

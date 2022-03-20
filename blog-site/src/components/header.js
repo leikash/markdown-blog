@@ -18,17 +18,15 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <Link to="/">
-          <h3>
-            <div className="text-center">
+            <div className="logo">
               <StaticImage 
                 src="../images/logo_browser_772201.png" 
                 alt="${data.site.siteMetadata.title}" 
-              />
+                />
             </div>
-            <div className="text-center text-pink-300 font-sans mb-3">
+            <div className='subtitle'>
               We wish fruitful life
             </div>
-          </h3>
       </Link>
       <nav>
         <ul>
@@ -50,13 +48,27 @@ const HeaderWrapper = styled.header`
     justify-content: space-between;
   }
   .logo {
+    padding: 5px;
     font-size: 18px;
-    margin: 0;
-    font-weight: bold;
+    margin: 1;
+    font-weight: normal;
     a {
       text-decoration: none;
       color: var(--black);
     }
+  }
+  .subtitle {
+    color: gray;
+    padding:5px;
+    font-size: 14px;
+    margin: 0;
+    font-weight: normal;
+    text-align: right;
+    a {
+      text-decoration: none;
+      color: var(--black);
+    }
+
   }
   nav ul {
     margin: 0;
@@ -72,7 +84,7 @@ const HeaderWrapper = styled.header`
       a:hober{
         text-decoration: underline;
         font-weight: bold;
-        color: darkgray;
+        color: darkgreen;
       }
     }
   }
