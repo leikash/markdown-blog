@@ -82,11 +82,24 @@ module.exports = {
     `gatsby-plugin-image`,
     // スタイルを整えるために追加
     // 参照 https://npmja.com/tuto3.php
+    /* styled-componentsを使うため、typographyを無効にする
     {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    */
+    // google fontsを入れる
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `limelight`,
+          `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
+        ],
+        display: 'swap'
+      }
+    }
   ],
 }
