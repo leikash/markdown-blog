@@ -15,14 +15,12 @@ const About = () => {
     `
   )
   return (
-    <div>
-      <Layout>
-        <h1>
-          About Page
-        </h1>
-        <p>{data.site.siteMetadata.title}</p>
-      </Layout>
-    </div>
+    <Layout>
+      <h1>
+        About Page
+      </h1>
+      <p>{data.site.siteMetadata.title}</p>
+    </Layout>
   )
 }
 

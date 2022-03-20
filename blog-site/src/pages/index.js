@@ -4,31 +4,39 @@ import { graphql, Link } from "gatsby"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const Home = ({ data }) => {
+  console.log("Home")
+  console.log(data)
   return (
-    <div>
-      <Layout>
-        <div>
-          {data.allMarkdownRemark.nodes.map(node => (
-            <div key={node.id}>
-              <Link to={node.fields.slug}>
-                <li>
-                  <h2>
-                      {node.frontmatter.title}
-                  </h2>
-                  <div>
-                    {decidedImageTag(node)}
-                  </div>
+    <Layout>
+        <Bloglist data={ data } />
+    </Layout>
+  )
+}
+
+const Bloglist = ({ data }) => {
+  console.log("Bloglist")
+  console.log(data)
+  return (
+      <div>
+        {data.allMarkdownRemark.nodes.map(node => (
+          <div key={node.id}>
+            <Link to={node.fields.slug}>
+              <li>
+                <h2>
+                  {node.frontmatter.title}
+                </h2>
+                <div>
+                  {decidedImageTag(node)}
+                </div>
                   {node.frontmatter.date}
-                </li>
-              </Link>
-                <li>
-                    {node.frontmatter.summary}
-                </li>
-            </div>
-          ))}
-        </div>
-      </Layout>
-    </div>
+              </li>
+            </Link>
+            <li>
+              {node.frontmatter.summary}
+            </li>
+          </div>
+        ))}
+      </div>
   )
 }
 
@@ -55,29 +63,26 @@ const decidedImageTag = (node) => {
   }
 }
 
-
-export const query = graphql`
-  {
-    allMarkdownRemark {
-      nodes {
-        id
-        html
-        fields{
-          slug
-        }
-        frontmatter {
-          title
-          date
-          summary
-          topImage {
-            childImageSharp {
-              gatsbyImageData(width: 300)
-            }
+export const query = graphql`{
+  allMarkdownRemark {
+    nodes {
+      id
+      html
+      fields{
+        slug
+      }
+      frontmatter {
+        title
+        date
+        summary
+        topImage {
+          childImageSharp {
+            gatsbyImageData(width: 300)
           }
         }
       }
     }
   }
-`
+}`
 
 export default Home
