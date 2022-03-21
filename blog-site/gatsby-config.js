@@ -114,7 +114,7 @@ module.exports = {
     // 画像表示のため。gatsby-imageは非推奨のため、gatsby-plugin-imageを使用する
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-image/
     `gatsby-plugin-image`,
-    /*
+    
     // スタイルを整えるために追加
     // 参照 https://npmja.com/tuto3.php
     {
@@ -123,18 +123,19 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    */
-    /* google fontsを入れる
+    
+    /*
+    // google fontsを入れる
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `limelight`,
-          `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
+          `roboto mono`,
+          `noto sans japanese\:300,400,400i,700,700i`,
         ],
-        display: 'swap'
-      }
-    }
+        display: "swap",
+      },
+    },
     */
   ],
 }

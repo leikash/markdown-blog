@@ -1,8 +1,19 @@
+// google-fontsを使うため、ここを参考にする
+// https://bear-fruit.online/how-to-set-japanesefont/
+
 import Typography from "typography"
-import fairyGateTheme from "typography-theme-fairy-gates"
 
-// 独自にテーマを設定する
-const typography = new Typography(fairyGateTheme)
+const typography = new Typography({
+    baseFontSize: "16px",
+    baseLineHeight: 1.666,
+    googleFonts:[
+        {
+            name: "Noto Sans JP",
+            styles: ["400", "400i", "700", "700i"],
+        }
+    ],
+    headerFontFamily: ["Noto Sans JP"],
+    bodyFontFamily: ["Noto Sans JP"],
+})
 
-export const { scale, rhythm, options } = typography
 export default typography
