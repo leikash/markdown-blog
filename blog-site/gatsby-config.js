@@ -53,6 +53,30 @@ module.exports = {
       }
     },
     "gatsby-plugin-mdx",
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+          `gatsby-remark-code-titles`, //ファイルのタイトルを表示
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false, //行数を出したい場合trueに。
+              noInlineHighlight: false,
+            },
+          },
+        ],
+      },
+    },
     // 画像を埋め込む
     // 参照: https://reffect.co.jp/react/gatsby-basic-tutorial-for-beginners-4
     `gatsby-transformer-sharp`,
