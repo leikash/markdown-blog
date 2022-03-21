@@ -15,7 +15,7 @@ const AboutPage = () => {
     `
   )
   return (
-    <Layout>
+    <Layout pageTitle="About">
       <main>
         <title>About Me</title>
         <h1>{data.site.siteMetadata.title}</h1>

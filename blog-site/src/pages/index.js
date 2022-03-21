@@ -2,10 +2,10 @@ import React from "react"
 import Layout from "../components/layout"
 import { StaticImage } from "gatsby-plugin-image"
 
-const IndexPage = ({ data }) => {
+const IndexPage = () => {
   return (
     <div style={{ margin: `3rem auto`, maxWidth: 600 }}>
-    <Layout>
+    <Layout pageTitle="Home">
       <p>We wish your fruitful life.</p>
       <StaticImage
         src="../images/ElNido.jpg"
