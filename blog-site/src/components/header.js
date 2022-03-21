@@ -17,12 +17,9 @@ const Header = () => {
   return (
     <header>
       <Link to="/">
-            <div>
-              <StaticImage 
-                src="../images/logo_browser_772201.png" 
-                alt="${data.site.siteMetadata.title}" 
-                />
-            </div>
+            <h1>
+              header, {data.site.siteMetadata.title}
+            </h1>
             <div>
               We wish fruitful life
             </div>
@@ -39,3 +36,12 @@ const Header = () => {
 }
 
 export default Header
+
+/*ロゴの画像を表示したいときに使う
+            <div>
+              <StaticImage 
+                src="../images/logo_browser_772201.png" 
+                alt="${data.site.siteMetadata.title}" 
+                />
+            </div>
+*/

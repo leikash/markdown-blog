@@ -1,8 +1,8 @@
 import Typography from "typography"
-import githubTheme from 'typography-theme-github'
+import fairyGateTheme from "typography-theme-fairy-gates"
 
 // 独自にテーマを設定する
-const typography = new Typography(githubTheme)
+const typography = new Typography(fairyGateTheme)
 
 export const { scale, rhythm, options } = typography
 export default typography

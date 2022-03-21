@@ -3,18 +3,25 @@ import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const Home = ({ data }) => {
-  console.log("Home")
+const IndexPage = ({ data }) => {
+  console.log("Passed IndexPage")
   console.log(data)
   return (
-    <Layout>
+    <div style={{ margin: `3rem auto`, maxWidth: 600 }}>
+    <Layout pageTitle="Leikash blog">
+      <p>We wish fruitful life.</p>
+      <StaticImage
+        src="../images/ElNido.jpg"
+        alt="Site top image"
+      />
         <Bloglist data={ data } />
     </Layout>
+    </div>
   )
 }
 
 const Bloglist = ({ data }) => {
-  console.log("Bloglist")
+  console.log("Bloglist index.js")
   console.log(data)
   return (
       <div>
@@ -85,4 +92,4 @@ export const query = graphql`{
   }
 }`
 
-export default Home
+export default IndexPage

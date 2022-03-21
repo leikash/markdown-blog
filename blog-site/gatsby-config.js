@@ -6,7 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Leikash blog",
+    title: "Leikash Labo.",
     author: "Leikash",
     category: ["React", "Webサイト構築"],
     user: { name: "Leikash", email: "kashbellie@gmail.com" },
@@ -42,6 +42,15 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
+    },
+    // mdxブログを作れるようにする
+    // https://www.gatsbyjs.com/docs/tutorial/part-4/
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `blog`,
+        path: `${__dirname}/blog`,
+      }
     },
     // 画像を埋め込む
     // 参照: https://reffect.co.jp/react/gatsby-basic-tutorial-for-beginners-4
@@ -82,14 +91,12 @@ module.exports = {
     `gatsby-plugin-image`,
     // スタイルを整えるために追加
     // 参照 https://npmja.com/tuto3.php
-    /*
     {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    */
     /* google fontsを入れる
     {
       resolve: `gatsby-plugin-google-fonts`,

@@ -1,10 +1,30 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 
-/* ファイル分割するときに使う。
-const Bloglist = ({ data }) => {
-    console.log("Bloglist")
+const Bloglist = () => {
+    console.log("blog-list.js")
+    const data = useStaticQuery(graphql`{
+      allMarkdownRemark {
+        nodes {
+          id
+          html
+          fields{
+            slug
+          }
+          frontmatter {
+            title
+            date
+            summary
+            topImage {
+              childImageSharp {
+                gatsbyImageData(width: 300)
+              }
+            }
+          }
+        }
+      }
+    }`)
     console.log(data)
     return (
         <div>
@@ -52,6 +72,4 @@ const Bloglist = ({ data }) => {
       )
     }
   }
-
 export default Bloglist
-*/
