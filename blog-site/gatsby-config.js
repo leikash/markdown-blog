@@ -74,6 +74,13 @@ module.exports = {
               noInlineHighlight: false,
             },
           },
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+              rel: 'noopener',
+            },
+          },
         ],
       },
     },
@@ -111,11 +118,25 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+        {
+          resolve: "gatsby-remark-external-links",
+          options: {
+            target: "_blank",
+            rel: 'noopener',
+          },
+        },
+        ],
+      },
+    },
     // 画像表示のため。gatsby-imageは非推奨のため、gatsby-plugin-imageを使用する
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-image/
     `gatsby-plugin-image`,
-    
     // スタイルを整えるために追加
+    // google fontsもここで追加
     // 参照 https://npmja.com/tuto3.php
     {
       resolve: `gatsby-plugin-typography`,
@@ -124,18 +145,5 @@ module.exports = {
       },
     },
     
-    /*
-    // google fontsを入れる
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `roboto mono`,
-          `noto sans japanese\:300,400,400i,700,700i`,
-        ],
-        display: "swap",
-      },
-    },
-    */
   ],
 }
