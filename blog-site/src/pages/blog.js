@@ -2,9 +2,9 @@
 スタイルの勉強のため、Gatsby公式チュートリアルをやってみる
 https://www.gatsbyjs.com/docs/tutorial/
 */
-
 import * as React from 'react'
 import { graphql } from 'gatsby'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../components/layout'
 
 
@@ -13,10 +13,14 @@ const BlogPage = ({ data }) => {
     <Layout pageTitle="My Blog Posts">
       <ul>
       {
-        data.allFile.nodes.map(node => (
-          <li key={node.name}>
-            {node.name}
-          </li>
+        data.allMdx.nodes.map((node) => (
+          <article key={node.id}>
+            <h2>{node.frontmatter.title}</h2>
+            <p>Posted: {node.frontmatter.date}</p>
+            <MDXRenderer>
+              {node.body}
+            </MDXRenderer>
+          </article>
         ))
       }
       </ul>
@@ -26,9 +30,14 @@ const BlogPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allFile(filter: {sourceInstanceName: {eq: "blog"}}) {
+    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
       nodes {
-        name
+        frontmatter {
+          date
+          title
+        }
+        id
+        body
       }
     }
   }
