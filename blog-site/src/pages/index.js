@@ -1,5 +1,26 @@
 import React from "react"
 import Layout from "../components/layout"
+import { StaticImage } from "gatsby-plugin-image"
+
+const IndexPage = ({ data }) => {
+  return (
+    <div style={{ margin: `3rem auto`, maxWidth: 600 }}>
+    <Layout>
+      <p>We wish your fruitful life.</p>
+      <StaticImage
+        src="../images/ElNido.jpg"
+        alt="Site top image"
+      />
+    </Layout>
+    </div>
+  )
+}
+export default IndexPage
+
+/* トップページをシンプルにするためコメントアウトする
+ここから下は全部コメント
+import React from "react"
+import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -8,8 +29,8 @@ const IndexPage = ({ data }) => {
   console.log(data)
   return (
     <div style={{ margin: `3rem auto`, maxWidth: 600 }}>
-    <Layout pageTitle="Leikash blog">
-      <p>We wish fruitful life.</p>
+    <Layout>
+      <p>We wish your fruitful life.</p>
       <StaticImage
         src="../images/ElNido.jpg"
         alt="Site top image"
@@ -46,6 +67,8 @@ const Bloglist = ({ data }) => {
       </div>
   )
 }
+
+
 
 // 静的イメージ動的イメージのタグを決定して出力する
 const decidedImageTag = (node) => {
@@ -91,5 +114,4 @@ export const query = graphql`{
     }
   }
 }`
-
-export default IndexPage
+*/
