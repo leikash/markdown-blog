@@ -1,6 +1,6 @@
-/* .gatsby-code-title {
-    background: #0b293f; 
-    color: #fff;
+.gatsby-code-title {
+    background: #F5F2F0; 
+    color: gray;
     margin-bottom: -0em;
     padding: 1rem 1rem;
     font-size: 1em;
@@ -10,18 +10,8 @@
     display: table;
     position: relative;
     top: 10px;
-}
-*/
-.gatsby-code-title {
-  margin-bottom: -0.6rem;
-  padding: 0.5em 1em;
-  font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+    font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
     'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
     'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
     monospace;
-  background-color: #ffd342;
-  color: black;
-  z-index: 0;
-  border-top-left-radius: 0.3em;
-  border-top-right-radius: 0.3em;
 }
