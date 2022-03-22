@@ -4,7 +4,6 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const IndexPage = () => {
   return (
-    <div style={{ margin: `3rem auto`, maxWidth: 600 }}>
     <Layout pageTitle="Home">
       <p>We wish your fruitful life.</p>
       <StaticImage
@@ -12,7 +11,6 @@ const IndexPage = () => {
         alt="Site top image"
       />
     </Layout>
-    </div>
   )
 }
 export default IndexPage

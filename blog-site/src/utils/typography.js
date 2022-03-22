@@ -12,8 +12,9 @@ const typography = new Typography({
             styles: ["400", "400i", "700", "700i"],
         }
     ],
-    headerFontFamily: ["Noto Sans JP"],
-    bodyFontFamily: ["Noto Sans JP"],
+    headerFontFamily: ["Noto Sans JP", "sans-serif"],
+    bodyFontFamily: ["Noto Sans JP", "sans-serif"],
 })
 
+export const { scale, rhythm, options } = typography
 export default typography

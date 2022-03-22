@@ -21,7 +21,8 @@ Markdownで書いて、ローカルに保存するのが一番簡単というこ
 
 ## 1. Githubでリポジトリ作成
 レポジトリ名を決めて新たにレポジトリを作成  
-```bash
+
+```bash:title=bash
 $ git clone https://github.com/leikash/markdown-blog.git
 ```
 
@@ -31,7 +32,7 @@ $ git clone https://github.com/leikash/markdown-blog.git
 ここを参考にして作成  
 [基礎から始めるGatsbyJS入門](https://reffect.co.jp/react/gatsby-basic-tutorial-for-beginners)
 
-```bash
+```bash:title=bash
 $ gatsby new blog-site https://github.com/gatsbyjs/gatsby-starter-hello-world
 ```
 
@@ -41,15 +42,13 @@ $ gatsby new blog-site https://github.com/gatsbyjs/gatsby-starter-hello-world
 
 #### 2.2.1 インストール
 まずは、ターミナルからインストール
-```bash
+```bash:title=bash
 $ yarn add tailwindcss postcss autoprefixer gatsby-plugin-postcss
 $ npx tailwindcss init -p
 ```
 #### 2.2.2 Gatsbyのplug-inに登録・設定
 お決まりで、plug-inを入れたら、Gatsbyのplug-inに登録して、設定を行います。  
-```javascript
-// gatsby-config.js
-
+```javascript:title=gatsby-config.js
 module.exports = {
   plugins: [
     // ...
@@ -58,8 +57,7 @@ module.exports = {
   ],
 }
 ```
-```javascript
-// tailwind.config.js
+```javascript:title=tailwind.config.js
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -72,32 +70,29 @@ module.exports = {
 ```
 Tailwind CSSの手順にはこれが書いていなくてハマりました。  
 postcss.config.jsをroot直下に作ります。
-```javascript
-// postcss.config.js
+
+```javascript:title=postcss.config.js
 module.exports = () => ({
     plugins: [require("tailwindcss")],
 })
 ```
 
 Tailwind CSSが全体に適用されるように、'./src/styles/global.css'、root直下に'gatsby-browser.js'を作成します。  
-```css
-/* global.css */
+```css:title=global.css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 ```
-```javascript
-// gatsby-browser.js
+```javascript:title=gatsby-browser.js
 import './src/styles/global.css'
 ```
 
 #### 2.2.3 動作確認
 正しく適用されたか動作確認します。  
-```bash
+```bash:title=bash
 $ yarn run develop
 ```
-```javascript
-//index.js
+```javascript:index.js
   <h1 className="text-4xl font-bold underline text-green-800">
     Leikash Blog
   </h1>

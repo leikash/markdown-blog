@@ -63,14 +63,14 @@ module.exports = {
               maxWidth: 590,
             },
           },
-          `gatsby-remark-code-titles`, //ファイルのタイトルを表示
+          `gatsby-remark-prismjs-title`,
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: "language-",
               inlineCodeMarker: null,
               aliases: {},
-              showLineNumbers: false, //行数を出したい場合trueに。
+              showLineNumbers: false, //行数を出したら1行ずれてる
               noInlineHighlight: false,
             },
           },
@@ -88,6 +88,8 @@ module.exports = {
     // 参照: https://reffect.co.jp/react/gatsby-basic-tutorial-for-beginners-4
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    // /* ここから mdxの運用ができるようになったら不要
+    // ただ、現状、gatsby-node.js, post.jsでエラーになるため残す
     // Markdownファイルを表示するため
     `gatsby-transformer-remark`,
     {
@@ -104,7 +106,7 @@ module.exports = {
           },
           // Prismの導入 gatsby-transformer-remarkが競合するため、入れ子で記載する
           // https://o-alquimista.com/blogs/gatsby-contentful/
-          `gatsby-remark-code-titles`, //ファイルのタイトルを表示
+          `gatsby-remark-prismjs-title`,
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
@@ -118,20 +120,7 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-        {
-          resolve: "gatsby-remark-external-links",
-          options: {
-            target: "_blank",
-            rel: 'noopener',
-          },
-        },
-        ],
-      },
-    },
+    // === ここまで */
     // 画像表示のため。gatsby-imageは非推奨のため、gatsby-plugin-imageを使用する
     // https://www.gatsbyjs.com/plugins/gatsby-plugin-image/
     `gatsby-plugin-image`,
