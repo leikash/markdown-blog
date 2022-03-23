@@ -6,6 +6,7 @@
   max-width: 750px;
 }
 .heading {
+  font-family: "Roboto";
   color: darkgreen;
 }
 .nav-links {
@@ -20,8 +21,15 @@
   color: gray;
 }
 .site-title {
+  font-family: "Montserrat";
   font-size: 3rem;
   color: gray;
   font-weight: 700;
   margin: 3rem 0;
 }
+/*
+        {
+            name: "Montserrat",
+            styles: ["400", "400i", "700", "700i"],
+        },
+*/
