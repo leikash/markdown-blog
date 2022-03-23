@@ -1,0 +1,32 @@
+---
+title: Markdown記法のファイルとHTMLタグのマッピング
+date: "2022-03-23"
+pagetype: blog
+summary: "Markdown記法で記載したファイルを表示するとき、MDXRendererタグ(gatsby-plugin-mdx)で作成したHTMLが出力されます。このHTMLにCSSのスタイルを反映させるため、Markdown記法がどのHTMLタグに反映されるかを書いていきます。"
+category: web-developer
+tags: ['Gatsby', 'React', 'Markdown']
+---
+
+# Markdown記法のファイルとHTMLタグのマッピング
+
+Markdown記法で記載したファイルを表示するとき、MDXRendererタグ(gatsby-plugin-mdx)で作成したHTMLが出力されます。  
+このHTMLにCSSのスタイルを反映させるため、Markdown記法がどのHTMLタグに変換されるかを確認します。  
+ここで出てくるタグに対して、後でCSSのスタイルを当てていきます。
+
+## Markdownでの記載とHTMLの内容
+
+| 項目 | Markdown | HTML |
+| --- | --- | --- |
+| 見出し1 | `# 見出し1` | `<h1>見出し1</h1>` |
+| 見出し2 | `# 見出し2` | `<h2>見出し2</h2>` |
+| 見出し3 | `# 見出し3` | `<h3>見出し3</h3>` |
+| 見出し4 | `# 見出し4` | `<h4>見出し4</h4>` |
+| 見出し5 | `# 見出し5` | `<h5>見出し5</h5>` |
+| 見出し6 | `# 見出し6` | `<h6>見出し6</h6>` |
+| 本文 | 本文を<br/>改行する | `<p>本文を<br>改行する</p>` |
+| 斜体 | `*italic*` になります。<br/> `_italic_` になります。 | `<em>italic</em> になります。`<br/>`<em>italic</em> になります。` |
+| 太字 | `**bold**` になります。<br/> `__bold__` になります。 | `<strong>bold</strong> になります。`<br/>`<strong>bold</strong> になります。` |
+| 区切り線 | `---` | `<hr>` |
+| リスト | - リスト1<br/>&nbsp;&nbsp;- ネスト リスト1_1<br/>&nbsp;&nbsp;&nbsp;&nbsp;- ネスト リスト1_1_1<br/>&nbsp;&nbsp;&nbsp;&nbsp;- ネスト リスト1_1_2<br/>&nbsp;&nbsp;- ネスト リスト1_2<br/>- リスト2 | `<ul>`<br/>`  <li>リスト1`<br/>`    <ul>`<br/>`      <li>ネスト リスト1_1`<br/>`        <ul>`<br/>`          <li>ネスト リスト1_1_1</li>`<br/>`          <li>ネスト リスト1_1_2</li>`<br/>`        </ul>`<br/>`      </li>`<br/>`      <li>ネスト リスト1_2</li>`<br/>`    </ul>`<br/>`  </li>`<br/>`  <li>リスト2</li>`<br/>`</ul>` |
+
+あとは随時増やしていきます。
