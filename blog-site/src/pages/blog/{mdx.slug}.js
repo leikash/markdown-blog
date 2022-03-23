@@ -3,6 +3,8 @@ import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../../components/layout'
+import './{mdx.slug}.module.css' 
+
 const BlogPost = ({ data }) => {
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
