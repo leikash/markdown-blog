@@ -3,13 +3,15 @@ import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../../components/layout'
-import './{mdx.slug}.module.css' 
+import { topImage, topDate } from './{mdx.slug}.module.css' 
 
 const BlogPost = ({ data }) => {
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
-      {decidedTopImageTag(data)}
-      <p>{data.mdx.frontmatter.date}</p>
+      <div className={topImage}>
+        {decidedTopImageTag(data)}
+        <p className={topDate}>{data.mdx.frontmatter.date}</p>
+      </div>
       <MDXRenderer>
         {data.mdx.body}
       </MDXRenderer>

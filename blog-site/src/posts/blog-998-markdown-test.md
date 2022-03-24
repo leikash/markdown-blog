@@ -5,12 +5,15 @@ pagetype: blog
 summary: "Markdown記法で記載したファイルを表示するとき、MDXRendererタグ(gatsby-plugin-mdx)で作成したHTMLが出力されます。このHTMLにCSSのスタイルを反映させるため、Markdown記法がどのHTMLタグに反映されるかを書いていきます。"
 ---
 
+
 # Title
 
 | 項目1 | 項目2 |
 | --- | --- |
 | aaa | xxx |
 | bbb | yyy |
+
+![picture 4](images/blog_001_changeDirection/1647171608385.png)
 
 
 ---
