@@ -1,6 +1,13 @@
 /* Refer Gatsby tutorials
   https://www.gatsbyjs.com/docs/tutorial/part-2/
 */
+.site-title {
+  font-family: "Montserrat";
+  font-size: 3rem;
+  color: #2b5c41;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
 .container {
   margin: 3rem auto;
   max-width: 750px;
@@ -8,7 +15,7 @@
 .heading {
   padding-top: 0.5rem;
   font-family: "Roboto";
-  color: darkgreen;
+  color: #2b5c41;
 }
 .nav-links {
   display: flex;
@@ -19,17 +26,11 @@
   padding-right: 2rem;
 }
 .nav-link-text {
-  color: gray;
-}
-.site-title {
-  font-family: "Montserrat";
-  font-size: 3rem;
-  color: gray;
-  font-weight: 700;
-  margin: 3rem 0;
+  font-size: 1rem;
+  color: rgb(75, 75, 75);
 }
 .main-part {
   padding: 0.1rem 0.5rem;
-  background: white;
+  background: whitesmoke;
   border-radius: 0.5rem;
 }

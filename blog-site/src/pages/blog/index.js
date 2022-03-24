@@ -9,7 +9,7 @@ import Layout from '../../components/layout'
 
 const BlogPage = ({ data }) => {
   return (
-    <Layout pageTitle="Blog list">
+    <Layout pageTitle="Blog">
       <ul>
       {
         data.allMdx.nodes.map((node) => (

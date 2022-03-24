@@ -5,7 +5,6 @@
     "gatsby-remark-images": "^6.9.1",
     "gatsby-remark-relative-images": "^2.0.2",
     "gatsby-transformer-remark": "^5.9.1",
-    "styled-components": "^5.3.3",
     "typography-theme-github": "^0.16.19"
   }
 }
