@@ -11,7 +11,7 @@ import { topImage, topDate } from './{mdx.slug}.module.css'
 const BlogPost = ({ data }) => {
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
-      <p className={topDate}>{data.mdx.frontmatter.date}</p>
+      <div className={topDate}>{data.mdx.frontmatter.date}</div>
       <div className={topImage}>
         {decidedTopImageTag(data)}
       </div>
