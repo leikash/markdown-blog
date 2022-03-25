@@ -5,12 +5,15 @@ import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../../components/layout'
 import { topImage, topDate } from './{mdx.slug}.module.css' 
 
+// ブラウザのタブにタイトルを出すために使っているのでこのままにする
+// pageTitle={data.mdx.frontmatter.title}
+
 const BlogPost = ({ data }) => {
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
+      <p className={topDate}>{data.mdx.frontmatter.date}</p>
       <div className={topImage}>
         {decidedTopImageTag(data)}
-        <p className={topDate}>{data.mdx.frontmatter.date}</p>
       </div>
       <MDXRenderer>
         {data.mdx.body}

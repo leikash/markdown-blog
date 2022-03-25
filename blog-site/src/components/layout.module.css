@@ -1,33 +1,41 @@
 /* Refer Gatsby tutorials
   https://www.gatsbyjs.com/docs/tutorial/part-2/
 */
-.site-title {
-  font-family: "Montserrat";
-  font-size: 3rem;
-  color: #2b5c41;
-  font-weight: 700;
-  margin: 0.5rem 0;
-}
+/* ページ全体のスタイル */
 .container {
-  margin: 3rem auto;
+  margin: 1rem auto;
   max-width: 750px;
 }
-.heading {
-  padding-top: 0.5rem;
-  font-family: "Roboto";
+/* Header部分のスタイル */
+.site-title {
+  font-family: "Montserrat";
+  font-size: 4rem;
   color: #2b5c41;
+  font-weight: 800;
+}
+/* nav-positionが効かない。なんで？ */
+.nav-position{
+  align-items: right;
 }
 .nav-links {
   display: flex;
   list-style: none;
-  padding-left: 0;
 }
 .nav-link-item {
   padding-right: 2rem;
 }
 .nav-link-text {
-  font-size: 1rem;
+  font-family: "Montserrat";
+  font-size: 1.3rem;
   color: rgb(75, 75, 75);
+  font-weight: 500;
+}
+/* タイトルとメイン部分のスタイル */
+.heading {
+  font-family: "Roboto", "Noto Sans JP";
+  color: rgb(75, 75, 75);
+  font-weight: 700;
+  padding-top: 0.5rem;
 }
 .main-part {
   padding: 0.1rem 0.5rem;
