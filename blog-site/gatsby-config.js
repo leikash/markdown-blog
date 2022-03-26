@@ -6,7 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Leikash Labo.",
+    title: "LEIKASH LAB.",
     author: "Leikash",
     category: ["React", "Webサイト構築"],
     user: { name: "Leikash", email: "kashbellie@gmail.com" },
