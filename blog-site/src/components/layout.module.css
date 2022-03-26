@@ -9,7 +9,7 @@ https://www.gatsbyjs.com/docs/tutorial/part-2/
 /* Header部分のスタイル */
 .site-title {
   font-family: "Montserrat";
-  font-size: 3.2rem;
+  font-size: 3rem;
   color: #2b5c41;
   font-weight: 800;
   padding: 0rem 0.2rem;
@@ -18,6 +18,9 @@ https://www.gatsbyjs.com/docs/tutorial/part-2/
 .site-title:before {
   content: url(../images/logo_green_mango_48px.png);
   width: 3rem;
+}
+.link-style {
+  text-decoration: none;
 }
 /* nav-positionが効かない。なんで？ */
 .nav-position{
@@ -37,25 +40,15 @@ https://www.gatsbyjs.com/docs/tutorial/part-2/
 }
 .nav-link-text {
   font-size: 1rem;
-  color: rgb(75, 75, 75);
+  color: #444444;
   font-weight: 400;
+  text-decoration: none;
 }
 .nav-link-text:hover {
   color: #FEB435;
   font-weight: 600;
 }
-
-/* タイトルとメイン部分のスタイル */
-.heading {
-  font-family: "Roboto", "Noto Sans JP";
-  color: #2b5c41;
-  font-weight: 700;
-  padding-top: 0.5rem;
-  margin: 1rem 0.1rem;
-}
-.heading:before {
-  content: "🍉";
-}
+/* メイン部分のスタイル */
 .main-part {
   padding: 0.1rem 0.5rem;
   background: #FFFFEF;

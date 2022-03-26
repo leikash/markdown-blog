@@ -1,0 +1,7 @@
+/* タイトル部分のスタイル */
+.title-style {
+  font-family: "Roboto", "Noto Sans JP";
+  color: #2b5c41;
+  font-weight: 700;
+  margin: 0.5rem auto 1rem auto;
+}

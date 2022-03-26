@@ -21,7 +21,7 @@ const typography = new Typography({
         },
     ],
     headerFontFamily: ["Roboto", "Noto Sans JP", "sans-serif"],
-    bodyFontFamily: ["Roboto", "Noto Sans JP", "sans-serif"],
+    bodyFontFamily: ["Segoe UI Emoji", "Roboto", "Noto Sans JP", "sans-serif"],
 })
 
 export const { scale, rhythm, options } = typography

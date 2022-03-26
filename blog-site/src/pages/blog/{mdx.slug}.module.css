@@ -2,14 +2,22 @@
 https://gotohayato.com/content/451/#:~:text=%E3%82%84%E3%82%8A%E6%96%B9-,CSS%20%E3%81%A7%E3%82%AF%E3%83%A9%E3%82%B9%E6%8C%87%E5%AE%9A%E3%81%AE%E7%84%A1%E3%81%84%E8%A6%81%E7%B4%A0%E3%81%AB%E3%81%AE%E3%81%BF%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB,%E3%82%92%E4%BD%BF%E3%81%88%E3%81%B0%20OK%20%E3%81%A7%E3%81%99%E3%80%82
 
 */
+.blog-title {
+  color: #2b5c41;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.blog-title:before {
+  content: "🍉";
+}
 .top-image {
   text-align: center;
   margin-bottom: 1rem;
   /* position: relative; 写真と重ねるときに使う */
 }
 .top-date {
-  text-align: right;
-  margin-right: 0.2rem;
+  padding-left: 3rem;
+  margin-top: 0rem;
   /* position: absolute;/* 写真と重ねるときに使う
   top: 0rem;
   left: 16%;
@@ -21,14 +29,75 @@ h1:not([class]) {
   display: none;
   padding: 0rem 0rem;
   font-size: 0.2rem 2rem;
-  color: red;
+  color: #2b5c41;
 }
-h2:not([class]) {
-  padding: 0rem 1rem;
-  font-size: 1.5rem;
-  color: darkslategrey;
+h2 {
+  color: #2b5c41;
 }
-p:not([class]) {
-  padding: 0rem 1.5rem;
-  color: #48434f
+h2:before {
+  content: "🌴";
 }
+h3 {
+  color: #2b5c41;
+}
+h3:before {
+  content: "🌴";
+}
+h4 {
+  color: #2b5c41;
+}
+h4:before {
+  content: "🌴";
+}
+h5 {
+  color: #2b5c41;
+}
+h5:before {
+  content: "🌴";
+}
+h6 {
+  color: #2b5c41;
+}
+h6:before {
+  content: "🌴";
+}
+p {
+  padding: 0rem 0.5rem;
+  color: #111111
+}
+a:hover{
+  color: #FEB435;
+}
+/* tableのデコレーションはここを参照
+https://webliker.info/75964/
+*/
+
+table {
+  width: 90%;
+  margin: 0rem 5% 2rem 5%;
+  border-collapse:collapse;
+  border-spacing: 0;
+  border: 1px solid #dcdcdc;
+}
+table th{
+  border: 1px solid #dcdcdc;
+  background-color: #a3d6cc;
+  padding: 0.5rem 0.5rem;
+}
+table td{
+  padding: 0.5rem;
+  border: 1px solid #dcdcdc;
+}
+table tr:nth-child(odd){
+  padding: 0.5rem;
+}
+table tr:nth-child(even){
+  padding: 0.5rem;
+  background-color: #eee;
+}
+
+/* 全部にアイコンが付いてしまうので実装方法を再検討する
+a:after{
+  content: " "url(../../images/external_link_16px.png);;
+}
+*/

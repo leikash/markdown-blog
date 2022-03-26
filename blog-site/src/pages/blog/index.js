@@ -5,11 +5,12 @@ https://www.gatsbyjs.com/docs/tutorial/
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/layout'
-
+import { titleStyle } from './index.module.css'
 
 const BlogPage = ({ data }) => {
   return (
     <Layout pageTitle="Blog">
+      <h1 className={titleStyle}>Blog</h1>
       <ul>
       {
         data.allMdx.nodes.map((node) => (

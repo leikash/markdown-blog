@@ -11,6 +11,7 @@ import {
   navLinkText,
   siteTitle,
   mainPart,
+  linkStyle,
 } from './layout.module.css'
 
 const Layout = ({ pageTitle, children }) => {
@@ -47,11 +48,14 @@ const Layout = ({ pageTitle, children }) => {
         </ul>
       </nav>
       <main className={mainPart}>
-          <h1 className={heading}>{pageTitle}</h1>
           {children}
       </main>
     </div>
   )
 }
+
+// ページの名前を表示したいときに使う
+// <h1 className={heading}>{pageTitle}</h1>
+
 
 export default Layout

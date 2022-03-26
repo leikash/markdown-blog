@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../../components/layout'
-import { topImage, topDate } from './{mdx.slug}.module.css' 
+import { blogTitle, topImage, topDate } from './{mdx.slug}.module.css' 
 
 // ブラウザのタブにタイトルを出すために使っているのでこのままにする
 // pageTitle={data.mdx.frontmatter.title}
@@ -11,7 +11,8 @@ import { topImage, topDate } from './{mdx.slug}.module.css'
 const BlogPost = ({ data }) => {
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
-      <div className={topDate}>{data.mdx.frontmatter.date}</div>
+      <div className={blogTitle}>{data.mdx.frontmatter.title}</div>
+      <div className={topDate}>Last updated: {data.mdx.frontmatter.date}</div>
       <div className={topImage}>
         {decidedTopImageTag(data)}
       </div>
