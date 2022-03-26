@@ -36,11 +36,6 @@ const Layout = ({ pageTitle, children }) => {
             </Link>
           </li>
           <li className={navLinkItem}>
-            <Link to="/about" className={navLinkText}>
-              About
-            </Link>
-          </li>
-          <li className={navLinkItem}>
             <Link to="/blog" className={navLinkText}>
               Blog
             </Link>
@@ -56,6 +51,12 @@ const Layout = ({ pageTitle, children }) => {
 
 // ページの名前を表示したいときに使う
 // <h1 className={heading}>{pageTitle}</h1>
-
+/* about pageを表示させるときに復活させる 
+          <li className={navLinkItem}>
+            <Link to="/about" className={navLinkText}>
+              About
+            </Link>
+          </li>
+*/
 
 export default Layout
