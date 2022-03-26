@@ -17,7 +17,7 @@ const typography = new Typography({
         },
         {
             name: "Noto Sans JP",
-            styles: ["400", "400i", "700", "700i"],
+            styles: ["400", "400i", "700", "700i", "900", "900i"],
         },
     ],
     headerFontFamily: ["Roboto", "Noto Sans JP", "sans-serif"],
