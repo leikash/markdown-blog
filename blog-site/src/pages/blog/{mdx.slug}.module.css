@@ -32,30 +32,35 @@ h1:not([class]) {
   color: #2b5c41;
 }
 h2 {
+  margin: 1rem;
   color: #2b5c41;
 }
 h2:before {
   content: "🌴";
 }
 h3 {
+  margin: 1rem;
   color: #2b5c41;
 }
 h3:before {
   content: "🌴";
 }
 h4 {
+  margin: 1rem;
   color: #2b5c41;
 }
 h4:before {
   content: "🌴";
 }
 h5 {
+  margin: 1rem;
   color: #2b5c41;
 }
 h5:before {
   content: "🌴";
 }
 h6 {
+  margin: 1rem;
   color: #2b5c41;
 }
 h6:before {

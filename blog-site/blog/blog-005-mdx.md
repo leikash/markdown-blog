@@ -20,3 +20,6 @@ test image
 #### 見出し4
 ##### 見出し5
 ###### 見出し6
+
+リスト表示はここを見ながら改善する
+https://saruwakakun.com/html-css/reference/ul-ol-li-design

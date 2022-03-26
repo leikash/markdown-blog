@@ -1,0 +1,82 @@
+---
+title: "Tailwind CSSの導入方法"
+date: "2022-03-26"
+pagetype: blog
+summary: "Tailwind CSSの導入方法を記載しています。ただし、CSS moduleを使うようにしたため、本サイトでは使っていません。"
+category: web-developer
+tags: ['Gatsby', 'React', 'Tailwind CSS']
+---
+
+# Tailwind CSSの導入方法  
+カスタマイズはしたいけど、CSSを本格的に勉強するわけではないと考えていたので、時間短縮のためにインストールしました。  
+[Tailwind CSSの手順](https://tailwindcss.com/docs/guides/gatsby)、[Gatsbyの手順](https://www.gatsbyjs.com/docs/how-to/styling/tailwind-css/)を見ながらインストールします。
+
+## 1 インストール
+まずは、ターミナルからインストールします。  
+```bash:title=bash
+$ yarn add tailwindcss postcss autoprefixer gatsby-plugin-postcss
+$ npx tailwindcss init -p
+```
+## 2 Gatsbyのplug-inに登録・設定
+お決まりで、Gatsbyのplug-inを入れたら、Gatsbyのplug-inに登録して、設定を行います。  
+```javascript:title=gatsby-config.js
+module.exports = {
+  plugins: [
+    // ...
+    'gatsby-plugin-postcss', //Setting for Tailwind CSS
+    // ...
+  ],
+}
+```
+```javascript:title=tailwind.config.js
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+Tailwind CSS公式の手順にはこれが書いていなくてハマりました。  
+[Gatsby公式のTailwind CSS導入手順](https://www.gatsbyjs.com/docs/how-to/styling/tailwind-css/)に書いてあります。  
+postcss.config.jsをroot直下に作ります。  
+
+```javascript:title=postcss.config.js
+module.exports = () => ({
+    plugins: [require("tailwindcss")],
+})
+```
+
+Tailwind CSSが全体に適用されるように、'./src/styles/global.css'、root直下に'gatsby-browser.js'を作成します。  
+```css:title=global.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+```javascript:title=gatsby-browser.js
+import './src/styles/global.css'
+```
+
+## 3 動作確認
+正しく適用されたか動作確認します。  
+```bash:title=bash
+$ yarn run develop
+```
+```javascript:title=index.js
+  <h1 className="text-4xl font-bold underline text-green-800">
+    Leikash Blog
+  </h1>
+```
+
+適用前: タイトルのh1タグがそのまま表示れています。  
+![picture 3](images/blog-001-create-blog-site/1647171529390.png)  
+
+適用後: 文字が緑になって、アンダーラインが追加されています。  
+![picture 4](images/blog-001-create-blog-site/1647171608385.png)  
+
+適用できました。  
+
+導入手順はここまでです。  
+お読みいただきありがとうございました。
