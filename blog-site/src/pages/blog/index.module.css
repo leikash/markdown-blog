@@ -17,7 +17,7 @@
   border: solid 1px;
   border-color: #FEB435;
   border-radius: 0.5rem;
-  background-color: #EEE;
+  background-color: whitesmoke;
 }
 .blog-list-border:hover{
   text-decoration:underline;
