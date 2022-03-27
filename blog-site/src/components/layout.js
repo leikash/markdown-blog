@@ -4,14 +4,12 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import {
   container,
-  heading,
-  navPosition,
+  navStyle,
   navLinks,
   navLinkItem,
   navLinkText,
   siteTitle,
   mainPart,
-  linkStyle,
 } from './layout.module.css'
 
 const Layout = ({ pageTitle, children }) => {
@@ -27,8 +25,10 @@ const Layout = ({ pageTitle, children }) => {
   return(
     <div className={container}>
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
-      <header className={siteTitle}>{data.site.siteMetadata.title}</header>
-      <nav className={navPosition}>
+      <header>
+        <Link to="/" className={siteTitle}>{data.site.siteMetadata.title}</Link>
+      </header>
+      <nav className={navStyle}>
         <ul className={navLinks}>
           <li className={navLinkItem}>
             <Link to="/" className={navLinkText}>

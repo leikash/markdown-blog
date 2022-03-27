@@ -5,26 +5,39 @@ https://www.gatsbyjs.com/docs/tutorial/
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/layout'
-import { titleStyle } from './index.module.css'
+import {
+  titleStyle,
+  blogListBackground,
+  blogLink,
+  blogListBorder,
+  blogLinkText,
+  blogDateText,
+  blogSummaryText,
+} from './index.module.css'
 
 const BlogPage = ({ data }) => {
   return (
     <Layout pageTitle="Blog">
       <h1 className={titleStyle}>Blog</h1>
-      <ul>
+      <div>
       {
         data.allMdx.nodes.map((node) => (
-          <article key={node.id}>
-            <h2>
-              <Link to={`/blog/${node.slug}`}>
+          <Link to={`/blog/${node.slug}`} className={blogLink}>
+            <div key={node.id} className={blogListBorder}>
+              <div className={blogDateText}>
+                Last updated: {node.frontmatter.date}
+              </div>
+              <div className={blogLinkText}>
                 {node.frontmatter.title}
-              </Link>
-            </h2>
-            <p>Posted: {node.frontmatter.date}</p>
-          </article>
+              </div>
+              <div className={blogSummaryText}>
+                {node.frontmatter.summary}
+              </div>
+            </div>
+          </Link>
         ))
       }
-      </ul>
+      </div>
     </Layout>
   )
 }
@@ -36,6 +49,7 @@ export const query = graphql`
         frontmatter {
           date
           title
+          summary
         }
         id
         slug

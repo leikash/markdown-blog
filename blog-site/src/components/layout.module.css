@@ -13,35 +13,26 @@ https://www.gatsbyjs.com/docs/tutorial/part-2/
   color: #2b5c41;
   font-weight: 800;
   padding: 0rem 0.2rem;
-  position: relative;
+  margin: 2rem 0rem 0rem auto;
+  text-decoration: none!important;
 }
 .site-title:before {
   content: url(../images/logo_green_mango_48px.png);
-  width: 3rem;
 }
-.link-style {
-  text-decoration: none;
-}
-/* nav-positionが効かない。なんで？ */
-.nav-position{
-  display: inline;
-  position: absolute;
-  right: 1rem;
-  top: 0rem;
+.nav-style{
+  font-family: "Montserrat";
 }
 .nav-links {
   display: flex;
-  list-style: none;
+  list-style-type: none!important;
 }
 .nav-link-item {
-  padding-right: 2rem;
-  margin: 0 0.2rem;
-  padding: 0 0 0 2rem;
+  margin: 0 1rem;
 }
 .nav-link-text {
   font-size: 1rem;
   color: #444444;
-  font-weight: 400;
+  font-weight: 600;
   text-decoration: none;
 }
 .nav-link-text:hover {
@@ -50,6 +41,7 @@ https://www.gatsbyjs.com/docs/tutorial/part-2/
 }
 /* メイン部分のスタイル */
 .main-part {
+  font-family: "Roboto", "Noto Sans JP";
   padding: 0.1rem 0.5rem;
   background: #FFFFEF;
   border-radius: 0.5rem;

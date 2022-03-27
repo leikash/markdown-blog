@@ -1,7 +1,42 @@
 /* タイトル部分のスタイル */
 .title-style {
-  font-family: "Roboto", "Noto Sans JP";
+  font-family: "Montserrat", "Noto Sans JP";
   color: #2b5c41;
   font-weight: 700;
   margin: 0.5rem auto 1rem auto;
+}
+.title-style:before {
+  content: "🍍";
+}
+.blog-link{
+  text-decoration: none;
+  color: #2b5c41;
+}
+.blog-list-border{
+  margin: 1.5rem 5%;
+  border: solid 1px;
+  border-color: #FEB435;
+  border-radius: 0.5rem;
+  background-color: #EEE;
+}
+.blog-list-border:hover{
+  text-decoration:underline;
+  background-color: white;
+}
+.blog-link-text{
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0 1rem;
+}
+.blog-link-text:before{
+  content : "🍉";
+}
+.blog-date-text{
+  font-size: 0.9rem;
+  padding: 0rem 0.5rem;
+  color: #444
+}
+.blog-summary-text{
+  padding: 0rem 7%;
+  color: #444;
 }

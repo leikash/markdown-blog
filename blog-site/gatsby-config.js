@@ -3,13 +3,12 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
-
 module.exports = {
   siteMetadata: {
-    title: "LEIKASH LAB.",
-    author: "Leikash",
+    title: "Karashlei Lab.",
+    author: "Karashlei",
     category: ["React", "Webサイト構築"],
-    user: { name: "Leikash", email: "kashbellie@gmail.com" },
+    user: { name: "Karashlei", email: "karashlei@gmail.com" },
   },
   plugins: [
     // メタデータ管理に使用する
@@ -113,7 +112,7 @@ module.exports = {
               classPrefix: "language-",
               inlineCodeMarker: null,
               aliases: {},
-              showLineNumbers: false, //行数を出したい場合trueに。
+              showLineNumbers: true, //行数を出したい場合trueに。
               noInlineHighlight: false,
             },
           },
@@ -133,6 +132,8 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    
+    // fontawesomeを使えるようにする
+    // gatsbyjs.com/plugins/gatsby-plugin-fontawesome-css/
+    // `gatsby-plugin-fontawesome-css`,
   ],
 }

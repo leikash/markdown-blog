@@ -16,7 +16,7 @@ https://gotohayato.com/content/451/#:~:text=%E3%82%84%E3%82%8A%E6%96%B9-,CSS%20%
   /* position: relative; 写真と重ねるときに使う */
 }
 .top-date {
-  padding-left: 3rem;
+  padding-left: 7%;
   margin-top: 0rem;
   /* position: absolute;/* 写真と重ねるときに使う
   top: 0rem;
@@ -31,78 +31,98 @@ h1:not([class]) {
   font-size: 0.2rem 2rem;
   color: #2b5c41;
 }
-h2 {
-  margin: 1rem;
+h2:not([class]) {
+  margin: 2.5rem auto 0.8rem auto;
   color: #2b5c41;
 }
-h2:before {
+h2:not([class]):before {
   content: "🌴";
 }
-h3 {
-  margin: 1rem;
+h3:not([class]) {
+  margin: 2.5rem auto 0.8rem 0.5rem;
   color: #2b5c41;
 }
-h3:before {
+h3:not([class]):before {
   content: "🌴";
 }
-h4 {
-  margin: 1rem;
+h4:not([class]) {
+  margin: 2.5rem auto 0.8rem 1rem;
   color: #2b5c41;
 }
-h4:before {
+h4:not([class]):before {
   content: "🌴";
 }
-h5 {
-  margin: 1rem;
+h5:not([class]) {
+  margin: 2.5rem auto 0.8rem 1.5rem;
   color: #2b5c41;
 }
-h5:before {
+h5:not([class]):before {
   content: "🌴";
 }
-h6 {
-  margin: 1rem;
+h6:not([class]) {
+  margin: 2.5rem auto 0.8rem 1rem;
   color: #2b5c41;
 }
-h6:before {
+h6:not([class]):before {
   content: "🌴";
 }
-p {
+p:not([class]) {
+  margin: 1rem;
   padding: 0rem 0.5rem;
   color: #111111
 }
-a:hover{
+a:not([class]):hover{
   color: #FEB435;
 }
+/* :not([class])をつけると属性のあるcssには影響しない */
+a:not([class]):after{
+  content: " "url(../../images/external_link_16px.png);;
+}
+
+/* リストはここを参照
+https://saruwakakun.com/html-css/reference/ul-ol-li-design
+*/
+ul:not([class]),ol:not([class]) {
+/*  border: solid 2px #ffb03f; */
+  padding: 0em 1em 0em 2.3em;
+  position: relative;
+  list-style: none;
+}
+
+ul li:not([class]),ol li:not([class]) {
+  line-height: 1.5;
+  padding: 0em 0.5em;
+}
+
+ul li:not([class]):before , ol li:not([class]):before {
+  content: "🍊";
+  position: absolute;
+  left : 1em; 
+}
+
 /* tableのデコレーションはここを参照
 https://webliker.info/75964/
 */
-
-table {
+table:not([class]) {
   width: 90%;
   margin: 0rem 5% 2rem 5%;
   border-collapse:collapse;
   border-spacing: 0;
   border: 1px solid #dcdcdc;
 }
-table th{
+table th:not([class]){
   border: 1px solid #dcdcdc;
   background-color: #a3d6cc;
   padding: 0.5rem 0.5rem;
 }
-table td{
+table td:not([class]){
   padding: 0.5rem;
   border: 1px solid #dcdcdc;
 }
-table tr:nth-child(odd){
+table tr:not([class]):nth-child(odd){
   padding: 0.5rem;
 }
-table tr:nth-child(even){
+table tr:not([class]):nth-child(even){
   padding: 0.5rem;
   background-color: #eee;
 }
-
-/* 全部にアイコンが付いてしまうので実装方法を再検討する
-a:after{
-  content: " "url(../../images/external_link_16px.png);;
-}
-*/
