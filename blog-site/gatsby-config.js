@@ -6,6 +6,8 @@
 module.exports = {
   siteMetadata: {
     title: "Karashlei Lab.",
+    siteUrl: `https://karashlei.com`,
+    description: "プロジェクト管理やWebサイト構築のやり方を書いていきます。",
     author: "Karashlei",
     category: ["React", "Webサイト構築"],
     user: { name: "Karashlei", email: "karashlei@gmail.com" },
@@ -15,8 +17,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Leikash blog`,
-        short_name: `Leikash blog`,
+        name: `Karashlei Lab.`,
+        short_name: `Karashlei Lab.`,
         start_url: `/`,
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
@@ -135,5 +137,34 @@ module.exports = {
     // fontawesomeを使えるようにする
     // gatsbyjs.com/plugins/gatsby-plugin-fontawesome-css/
     // `gatsby-plugin-fontawesome-css`,
+    // SEO対策のため、サイトマップを作る
+    // https://zenn.dev/notofu/articles/d84d217244d02a
+    // このエラーが出るので導入中止。Google search consoleに登録するために使う予定。
+    // Error in "/home/yukio/development/markdown-blog/node_modules/gatsby-plugin-sitemap/gatsby-node.js": Cannot find module 'gatsby/graphql'
+    /*
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `
+        {
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage {
+            edges {
+              node {
+                path
+              }
+            }
+          }
+        }`,
+      },
+    },
+    */
+    // SEO対策のため、metaタグを作成する
+    `gatsby-plugin-react-helmet`,
   ],
 }
