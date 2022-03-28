@@ -74,11 +74,11 @@ p:not([class]) {
 a:not([class]):hover{
   color: #FEB435;
 }
-/* :not([class])をつけると属性のあるcssには影響しない */
+/* :not([class])をつけると属性のあるcssには影響しない
 a:not([class]):after{
   content: " "url(../../images/external_link_16px.png);;
 }
-
+ */
 /* リストはここを参照
 https://saruwakakun.com/html-css/reference/ul-ol-li-design
 */
