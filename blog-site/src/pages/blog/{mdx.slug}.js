@@ -10,7 +10,10 @@ import { blogTitle, topImage, topDate } from './{mdx.slug}.module.css'
 
 const BlogPost = ({ data }) => {
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
+    <Layout 
+      pageTitle={data.mdx.frontmatter.title} 
+      pageDescription={data.mdx.frontmatter.description} 
+    >
       <div className={blogTitle}>{data.mdx.frontmatter.title}</div>
       <div className={topDate}>Last updated: {data.mdx.frontmatter.date}</div>
       <div className={topImage}>
@@ -22,6 +25,10 @@ const BlogPost = ({ data }) => {
     </Layout>
   )
 }
+
+// SEO対策でここを見ながら入れているけど、エラーになるため除外する
+// https://moon-forest-design.github.io/memo/gatsbyjs-seo/
+//      imgPath={`/${data.mdx.slug}${data.mdx.frontmatter.topImage.base}`} 
 
 const decidedTopImageTag = (data) => {
 // 記事のトップ画像を取り込む
@@ -39,8 +46,8 @@ const decidedTopImageTag = (data) => {
     return(
       <StaticImage
         src='../../images/proxyclick-visitor-management-system-nezoFjwiuLQ-unsplash.jpg'
-        alt='Leikash Blog'
-        width={500}
+        alt='Karashlei lab.'
+        width={750}
       />
     )
   }
@@ -51,17 +58,20 @@ export const query = graphql`
     mdx(id: {eq: $id}) {
       frontmatter {
         title
+        summary
         date
         topImage {
           childImageSharp {
             gatsbyImageData(
-              width: 500
+              width: 750
               placeholder: BLURRED
             )
           }
+          base
         }
       }
       body
+      slug
     }
   }
 `

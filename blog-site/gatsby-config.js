@@ -5,12 +5,14 @@
  */
 module.exports = {
   siteMetadata: {
-    title: "Karashlei Lab.",
+    siteName: "Karashlei Lab.",
+    siteSubTitle: "We wish your fruitful life.",
+    siteDescription: "プロジェクト管理やWebサイト構築のやり方を書いていきます。",
     siteUrl: `https://karashlei.com`,
-    description: "プロジェクト管理やWebサイト構築のやり方を書いていきます。",
-    author: "Karashlei",
-    category: ["React", "Webサイト構築"],
-    user: { name: "Karashlei", email: "karashlei@gmail.com" },
+    siteAuthor: "Karashlei",
+    siteOgpImage: "images/ElNido.jpg",
+    siteCategory: ["React", "Webサイト構築"],
+    siteUser: { name: "Karashlei", email: "karashlei@gmail.com" },
   },
   plugins: [
     // メタデータ管理に使用する
@@ -165,6 +167,7 @@ module.exports = {
     },
     */
     // SEO対策のため、metaタグを作成する
+    // https://moon-forest-design.github.io/memo/gatsbyjs-seo/
     `gatsby-plugin-react-helmet`,
   ],
 }

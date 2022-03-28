@@ -60,7 +60,7 @@ h5:not([class]):before {
   content: "🌴";
 }
 h6:not([class]) {
-  margin: 2.5rem auto 0.8rem 1rem;
+  margin: 2.5rem auto 0.8rem 2rem;
   color: #2b5c41;
 }
 h6:not([class]):before {

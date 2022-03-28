@@ -17,7 +17,7 @@ import {
 
 const BlogPage = ({ data }) => {
   return (
-    <Layout pageTitle="Blog">
+    <Layout pageTitle="Blog記事リスト" pageDescription="（Blog記事リストの説明）">
       <h1 className={titleStyle}>Blog</h1>
       <div>
       {

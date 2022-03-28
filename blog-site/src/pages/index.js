@@ -5,7 +5,7 @@ import { homeImage } from "./index.module.css"
 
 const IndexPage = () => {
   return (
-    <Layout pageTitle="Home">
+    <Layout topPage={true}>
       <p>We wish your fruitful life.</p>
       <div className={homeImage}>
         <StaticImage

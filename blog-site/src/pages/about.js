@@ -8,17 +8,17 @@ const AboutPage = () => {
       query {
         site {
           siteMetadata {
-            title
+            siteName
           }
         }
       }
     `
   )
   return (
-    <Layout pageTitle="About">
+    <Layout pageTitle="About Me" pageDescription="（Aboutページの説明）">
       <main>
         <title>About Me</title>
-        <h1>{data.site.siteMetadata.title}</h1>
+        <h1>{data.site.siteMetadata.siteName}</h1>
         <p>We wish fruitful life.</p>
       </main>
     </Layout>

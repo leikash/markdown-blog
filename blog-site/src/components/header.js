@@ -8,7 +8,7 @@ const Header = () => {
       query {
         site {
           siteMetadata {
-            title
+            siteName
           }
         }
       }
@@ -18,7 +18,7 @@ const Header = () => {
     <header>
       <Link to="/">
             <h1>
-              header, {data.site.siteMetadata.title}
+              header, {data.site.siteMetadata.siteName}
             </h1>
             <div>
               We wish fruitful life
@@ -41,7 +41,7 @@ export default Header
             <div>
               <StaticImage 
                 src="../images/logo_browser_772201.png" 
-                alt="${data.site.siteMetadata.title}" 
+                alt="${data.site.siteMetadata.siteName}" 
                 />
             </div>
 */

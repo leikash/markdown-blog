@@ -11,22 +11,27 @@ import {
   siteTitle,
   mainPart,
 } from './layout.module.css'
+import Seo from '../components/seo'
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ pageTitle, pageDescription, topPage, children }) => {
   const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
-          title
+          siteName
         }
       }
     }
   `)
   return(
     <div className={container}>
-      <title>{pageTitle} | {data.site.siteMetadata.title}</title>
+      <Seo
+        pageTitle={pageTitle}
+        pageDescription={pageDescription}
+        topPage={topPage}
+      />
       <header>
-        <Link to="/" className={siteTitle}>{data.site.siteMetadata.title}</Link>
+        <Link to="/" className={siteTitle}>{data.site.siteMetadata.siteName}</Link>
       </header>
       <nav className={navStyle}>
         <ul className={navLinks}>
