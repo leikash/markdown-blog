@@ -144,28 +144,9 @@ module.exports = {
     // このエラーが出るので導入中止。Google search consoleに登録するために使う予定。
     // Error in "/home/yukio/development/markdown-blog/node_modules/gatsby-plugin-sitemap/gatsby-node.js": Cannot find module 'gatsby/graphql'
     `gatsby-plugin-sitemap`,
-    /*
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        query: `
-        {
-          site {
-            siteMetadata {
-              siteUrl
-            }
-          }
-          allSitePage {
-            edges {
-              node {
-                path
-              }
-            }
-          }
-        }`,
-      },
-    },
-    */
+    // SEO対策はここを主に参照する
+    // https://monotein.com/blog/gatsby-seo-and-optimisations
+    `gatsby-plugin-robots-txt`,
     // SEO対策のため、metaタグを作成する
     // https://moon-forest-design.github.io/memo/gatsbyjs-seo/
     `gatsby-plugin-react-helmet`,

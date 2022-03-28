@@ -13,7 +13,6 @@ const BlogPost = ({ data }) => {
   if(data.mdx.frontmatter.topImage){ 
     imagePathBase = `../../blog/images/${data.mdx.slug}/${data.mdx.frontmatter.topImage.base}`
   }
-  console.log(imagePathBase)
   return (
     <Layout 
       pageTitle={data.mdx.frontmatter.title} 
@@ -32,9 +31,8 @@ const BlogPost = ({ data }) => {
   )
 }
 
-// SEO対策でここを見ながら入れているけど、エラーになるため除外する
+// SEO対策はここを見ながら入れました。
 // https://moon-forest-design.github.io/memo/gatsbyjs-seo/
-//      imgPath={`/${data.mdx.slug}${data.mdx.frontmatter.topImage.base}`} 
 
 const decidedTopImageTag = (data) => {
 // 記事のトップ画像を取り込む
