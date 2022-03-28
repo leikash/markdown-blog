@@ -22,8 +22,9 @@ const BlogPage = ({ data }) => {
       <div>
       {
         data.allMdx.nodes.map((node) => (
+          <div key={node.id}>
           <Link to={`/blog/${node.slug}`} className={blogLink}>
-            <div key={node.id} className={blogListBorder}>
+            <div className={blogListBorder}>
               <div className={blogDateText}>
                 Last updated: {node.frontmatter.date}
               </div>
@@ -35,6 +36,7 @@ const BlogPage = ({ data }) => {
               </div>
             </div>
           </Link>
+          </div>
         ))
       }
       </div>

@@ -33,7 +33,7 @@ const decidedTopImageTag = (data) => {
     // 記事のトップ画像がないときのタグ
     return(
       <StaticImage
-        src='../images/proxyclick-visitor-management-system-nezoFjwiuLQ-unsplash.jpg'
+        src='../images/bookshelf.jpg'
         alt='Leikash Blog'
         width={500}
       />

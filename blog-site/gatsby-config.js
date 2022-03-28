@@ -143,8 +143,8 @@ module.exports = {
     // https://zenn.dev/notofu/articles/d84d217244d02a
     // このエラーが出るので導入中止。Google search consoleに登録するために使う予定。
     // Error in "/home/yukio/development/markdown-blog/node_modules/gatsby-plugin-sitemap/gatsby-node.js": Cannot find module 'gatsby/graphql'
-    /*
     `gatsby-plugin-sitemap`,
+    /*
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {

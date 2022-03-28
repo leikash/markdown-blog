@@ -9,10 +9,16 @@ import { blogTitle, topImage, topDate } from './{mdx.slug}.module.css'
 // pageTitle={data.mdx.frontmatter.title}
 
 const BlogPost = ({ data }) => {
+  let imagePathBase = `../images/bookshelf.jpg`
+  if(data.mdx.frontmatter.topImage){ 
+    imagePathBase = `../../blog/images/${data.mdx.slug}/${data.mdx.frontmatter.topImage.base}`
+  }
+  console.log(imagePathBase)
   return (
     <Layout 
       pageTitle={data.mdx.frontmatter.title} 
       pageDescription={data.mdx.frontmatter.description} 
+      imgPath={imagePathBase} 
     >
       <div className={blogTitle}>{data.mdx.frontmatter.title}</div>
       <div className={topDate}>Last updated: {data.mdx.frontmatter.date}</div>
@@ -45,7 +51,7 @@ const decidedTopImageTag = (data) => {
     // 記事のトップ画像がないときのタグ
     return(
       <StaticImage
-        src='../../images/proxyclick-visitor-management-system-nezoFjwiuLQ-unsplash.jpg'
+        src='../../images/bookshelf.jpg'
         alt='Karashlei lab.'
         width={750}
       />
