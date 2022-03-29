@@ -1,18 +1,21 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../../components/layout'
+import PreviousNext from '../../components/previousNext'
 import { blogTitle, topImage, topDate } from './{mdx.slug}.module.css' 
 
 // ブラウザのタブにタイトルを出すために使っているのでこのままにする
 // pageTitle={data.mdx.frontmatter.title}
 
 const BlogPost = ({ data }) => {
+  // seo.jsと共に実装
   let imagePathBase = `../images/bookshelf.jpg`
   if(data.mdx.frontmatter.topImage){ 
     imagePathBase = `../../blog/images/${data.mdx.slug}/${data.mdx.frontmatter.topImage.base}`
   }
+  // seo.jsと共に実装, ここまで
   return (
     <Layout 
       pageTitle={data.mdx.frontmatter.title} 
@@ -27,6 +30,8 @@ const BlogPost = ({ data }) => {
       <MDXRenderer>
         {data.mdx.body}
       </MDXRenderer>
+      <PreviousNext slug={data.mdx.slug}>
+      </PreviousNext>
     </Layout>
   )
 }
