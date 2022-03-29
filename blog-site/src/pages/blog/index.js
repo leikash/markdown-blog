@@ -16,7 +16,6 @@ import {
 } from './index.module.css'
 
 const BlogPage = ({ data }) => {
-  console.log(data.allMdx.edges)
   return (
     <Layout pageTitle="Blog記事リスト" pageDescription="（Blog記事リストの説明）">
       <h1 className={titleStyle}>Blog</h1>
@@ -56,20 +55,6 @@ export const query = graphql`
         }
         id
         slug
-      }
-      edges {
-        next {
-          slug
-          id
-        }
-        node {
-          slug
-          id
-        }
-        previous {
-          slug
-          id
-        }
       }
     }
   }

@@ -1,0 +1,11 @@
+.link-style{
+  font-family: "Montserrat";
+  display: flex;
+  list-style-type: none;
+}
+.prev-style{
+  margin: 0rem auto 0rem 20%;
+}
+.next-style{
+  margin: 0rem 20% 0rem auto;
+}

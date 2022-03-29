@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../../components/layout'
@@ -25,13 +25,12 @@ const BlogPost = ({ data }) => {
       <div className={blogTitle}>{data.mdx.frontmatter.title}</div>
       <div className={topDate}>Last updated: {data.mdx.frontmatter.date}</div>
       <div className={topImage}>
-        {decidedTopImageTag(data)}
+        <DecidedTopImage topImage={data.mdx.frontmatter.topImage} />
       </div>
       <MDXRenderer>
         {data.mdx.body}
       </MDXRenderer>
-      <PreviousNext slug={data.mdx.slug}>
-      </PreviousNext>
+      <PreviousNext slug={data.mdx.slug} date={data.mdx.frontmatter.date}/>
     </Layout>
   )
 }
@@ -39,15 +38,14 @@ const BlogPost = ({ data }) => {
 // SEO対策はここを見ながら入れました。
 // https://moon-forest-design.github.io/memo/gatsbyjs-seo/
 
-const decidedTopImageTag = (data) => {
-// 記事のトップ画像を取り込む
-  const topImageObj = (data) => (getImage(data.mdx.frontmatter.topImage))
-  if(topImageObj(data)){
+const DecidedTopImage = (topImage) => {
+  // 記事のトップ画像を取り込む
+  if(getImage(topImage)){
     // 記事のトップ画像があるときのタグ
     return(
       <GatsbyImage
-        image={topImageObj(data)}
-        alt="${data.mdx.frontmatter.topImage.title}"
+        image={getImage(topImage)}
+        alt="${topImage.title}"
       />
     )
   }else{
