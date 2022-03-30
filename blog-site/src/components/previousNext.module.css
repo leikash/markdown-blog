@@ -2,10 +2,13 @@
   font-family: "Montserrat";
   display: flex;
   list-style-type: none;
+  padding-left: 0;
 }
 .prev-style{
-  margin: 0rem auto 0rem 20%;
+  padding-left: 0;
+  margin: 0rem auto 0rem 0rem;
 }
 .next-style{
-  margin: 0rem 20% 0rem auto;
+  padding: 0rem 0.5rem 0rem 0;
+  margin: 0rem 1rem 0rem auto;
 }

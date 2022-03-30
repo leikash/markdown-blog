@@ -1,5 +1,6 @@
+// 前ページ、次ページを表示する
 import * as React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 import { linkStyle, prevStyle, nextStyle } from './previousNext.module.css'
 
 const PreviousNext = ({ previousNext }) => {
