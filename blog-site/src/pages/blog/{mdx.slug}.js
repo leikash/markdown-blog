@@ -36,9 +36,28 @@ const BlogPost = ({ data, location }) => {
   // seo.jsと共に実装, ここまで
   // ここを通ると必ずlocation.state.currentが入るようにする
   // {typeof(location) ? location.state = {current: data.mdx.slug} : console.log('no location')}
-  let pagePointer = location.state
-
-  console.log('pagePointer:', pagePointer)
+  console.log('location.state:', location.state)
+  // 前ページ、次ページを決める
+  let pagePointer = (data, state = location.state) => {
+    let index = data.allMdx.nodes.findIndex((node) => `/blog/${node.slug}` === state.current)
+      console.log('current index:', index)
+    if(!state.previous){
+      console.log('no previous')
+      if(index+1 < data.allMdx.nodes.length){
+        state.previous = `/blog/${data.allMdx.nodes[index+1].slug}`
+      }
+      console.log('added previous:', state.previous)
+    }
+    if(!state.next){
+      console.log('no next')
+      if(index > 0){
+        state.next = `/blog/${data.allMdx.nodes[index-1].slug}`
+      }
+      console.log('added next:', state.next)
+    }
+    return state
+  }
+  console.log('pagePointer:', pagePointer(data))
   return (
     <Layout 
       pageTitle={data.mdx.frontmatter.title} 
@@ -54,9 +73,7 @@ const BlogPost = ({ data, location }) => {
         {data.mdx.body}
       </MDXRenderer>
       <PreviousNext 
-        slug={data.mdx.slug} 
-        date={data.mdx.frontmatter.date} 
-        previousNext={location.state}
+        previousNext={pagePointer(data)}
       />
     </Layout>
   )
