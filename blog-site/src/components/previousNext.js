@@ -2,7 +2,13 @@ import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { linkStyle, prevStyle, nextStyle } from './previousNext.module.css'
 
-const PreviousNext = ({ slug, date }) => {
+const PreviousNext = ({ slug, date, location }) => {
+  const previousPage = location.state.previous
+  const nextPage = location.state.next
+  
+  console.log('previousPage:', previousPage)
+  console.log('current:', location.state.current)
+  console.log('nextPage:', nextPage)
   console.log(slug,date)
   /*
   const allSlug = useStaticQuery(

@@ -16,14 +16,61 @@ import {
 } from './index.module.css'
 
 const BlogPage = ({ data }) => {
+  console.log(data.allMdx.nodes)
+  console.log('Array length:',data.allMdx.nodes.length)
+
+  const locationState = (index) => {
+    console.log('index:', index)
+    const PREV = ( data, index ) => {
+      if(index > 0){
+        return (data.allMdx.nodes[index-1].slug)
+      }
+    }
+    const NEXT = ( data, index ) => {
+      if(index+1 < data.allMdx.nodes.length){
+        return (data.allMdx.nodes[index+1].slug)
+      }
+    }
+
+    console.log('prev slug;', PREV(data, index))
+    console.log('next slug;', NEXT(data, index))
+    return (
+      {
+        previous: 'PREV',
+        current: 'CURRENT',
+        next: 'NEXT',
+      }
+    )
+  }
+  /*
+              {index > 0 ?
+            <h2>previous: {data.allMdx.nodes[index-1].slug}</h2>
+            :
+            <div/>
+            }
+            <h2>current: {data.allMdx.nodes[index].slug}</h2>
+            {data.allMdx.nodes[index+1] ?
+            <h2>next: {data.allMdx.nodes[index+1].slug}</h2>
+            :
+            <div/>
+            }
+  {
+    previous: `${data.allMdx.nodes[index-1].slug}`,
+    current: `${node.slug}`,
+    next: 'NEXT', 
+  }
+  */
   return (
     <Layout pageTitle="Blog記事リスト" pageDescription="（Blog記事リストの説明）">
       <h1 className={titleStyle}>Blog</h1>
       <div>
       {
-        data.allMdx.nodes.map((node) => (
+        data.allMdx.nodes.map((node, index) => (
           <div key={node.id}>
-          <Link to={`/blog/${node.slug}`} className={blogLink}>
+          <Link to={`/blog/${node.slug}`}
+            className={blogLink}
+            state={locationState(index)}
+          >
             <div className={blogListBorder}>
               <div className={blogDateText}>
                 Last updated: {node.frontmatter.date}

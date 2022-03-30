@@ -9,13 +9,15 @@ import { blogTitle, topImage, topDate } from './{mdx.slug}.module.css'
 // ブラウザのタブにタイトルを出すために使っているのでこのままにする
 // pageTitle={data.mdx.frontmatter.title}
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data, location }) => {
   // seo.jsと共に実装
   let imagePathBase = `../images/bookshelf.jpg`
   if(data.mdx.frontmatter.topImage){ 
     imagePathBase = `../../blog/images/${data.mdx.slug}/${data.mdx.frontmatter.topImage.base}`
   }
   // seo.jsと共に実装, ここまで
+  console.log('mdx current:', location.state.current)
+
   return (
     <Layout 
       pageTitle={data.mdx.frontmatter.title} 
@@ -30,7 +32,7 @@ const BlogPost = ({ data }) => {
       <MDXRenderer>
         {data.mdx.body}
       </MDXRenderer>
-      <PreviousNext slug={data.mdx.slug} date={data.mdx.frontmatter.date}/>
+      <PreviousNext slug={data.mdx.slug} date={data.mdx.frontmatter.date} location={location}/>
     </Layout>
   )
 }
