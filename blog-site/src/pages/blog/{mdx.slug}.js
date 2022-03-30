@@ -10,14 +10,35 @@ import { blogTitle, topImage, topDate } from './{mdx.slug}.module.css'
 // pageTitle={data.mdx.frontmatter.title}
 
 const BlogPost = ({ data, location }) => {
+  console.log('Z mdx current:', location)
+  console.log('a location pathname:', location.pathname)
+  console.log('b mdx current:', location.state)
+  console.log('c allMdx:', data.allMdx.nodes)
+  // URL直接入力のときにlocation.stateがnullになってしまう。
+  // index.jsで設定せずにここで設定する方法を考える必要あり。
+  if(location.state === null || location.state === undefined){
+    location.state = {
+      current: `${location.pathname}`,
+    }
+  }
+  if(location.state.current === null || location.state.current === undefined){
+    location.state = {
+      current: `${location.pathname}`
+    }
+  }
+
+  console.log('mdx current:', location.state)
   // seo.jsと共に実装
   let imagePathBase = `../images/bookshelf.jpg`
   if(data.mdx.frontmatter.topImage){ 
     imagePathBase = `../../blog/images/${data.mdx.slug}/${data.mdx.frontmatter.topImage.base}`
   }
   // seo.jsと共に実装, ここまで
-  console.log('mdx current:', location.state.current)
+  // ここを通ると必ずlocation.state.currentが入るようにする
+  // {typeof(location) ? location.state = {current: data.mdx.slug} : console.log('no location')}
+  let pagePointer = location.state
 
+  console.log('pagePointer:', pagePointer)
   return (
     <Layout 
       pageTitle={data.mdx.frontmatter.title} 
@@ -32,7 +53,11 @@ const BlogPost = ({ data, location }) => {
       <MDXRenderer>
         {data.mdx.body}
       </MDXRenderer>
-      <PreviousNext slug={data.mdx.slug} date={data.mdx.frontmatter.date} location={location}/>
+      <PreviousNext 
+        slug={data.mdx.slug} 
+        date={data.mdx.frontmatter.date} 
+        previousNext={location.state}
+      />
     </Layout>
   )
 }
@@ -81,6 +106,17 @@ export const query = graphql`
       }
       body
       slug
+    }
+    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+      nodes {
+        frontmatter {
+          date
+          title
+          summary
+        }
+        id
+        slug
+      }
     }
   }
 `
