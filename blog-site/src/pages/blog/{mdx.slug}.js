@@ -40,7 +40,9 @@ const BlogPost = ({ data, location }) => {
   // 前ページ、次ページを決める
   let pagePointer = (data, state = location.state) => {
     let index = data.allMdx.nodes.findIndex((node) => `/blog/${node.slug}` === state.current)
-      console.log('current index:', index)
+    console.log('current index:', index)
+    state.current = {title: 'Hello'}
+    console.log('current:', state.current)
     if(!state.previous){
       console.log('no previous')
       if(index+1 < data.allMdx.nodes.length){
