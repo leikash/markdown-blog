@@ -16,18 +16,8 @@ const BlogPost = ({ data, location }) => {
   console.log('a location pathname:', location.pathname)
   console.log('b mdx current:', location.state)
   console.log('c allMdx:', data.allMdx.nodes)
-  */
-  // URL直接入力のときにlocation.stateがnullになってしまう。
-  // pathnameをcurrentPageのpathとして入れる
-  if(location.state === null || 
-    location.state === undefined || 
-    location.state.current === null || 
-    location.state.current === undefined){
-    location.state = {
-      current: `${location.pathname}`
-    }
-  }
   console.log('mdx current:', location.state)
+  */
   // seo.jsと共に実装
   let imagePathBase = `../images/bookshelf.jpg`
   if(data.mdx.frontmatter.topImage){ 
