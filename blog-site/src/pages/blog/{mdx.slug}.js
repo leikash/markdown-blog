@@ -4,29 +4,29 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../../components/layout'
 import PreviousNext from '../../components/previousNext'
+import pageState from '../../components/pageState'
 import { blogTitle, topImage, topDate } from './{mdx.slug}.module.css' 
 
 // ブラウザのタブにタイトルを出すために使っているのでこのままにする
 // pageTitle={data.mdx.frontmatter.title}
 
 const BlogPost = ({ data, location }) => {
+  /*
   console.log('Z mdx current:', location)
   console.log('a location pathname:', location.pathname)
   console.log('b mdx current:', location.state)
   console.log('c allMdx:', data.allMdx.nodes)
+  */
   // URL直接入力のときにlocation.stateがnullになってしまう。
-  // index.jsで設定せずにここで設定する方法を考える必要あり。
-  if(location.state === null || location.state === undefined){
-    location.state = {
-      current: `${location.pathname}`,
-    }
-  }
-  if(location.state.current === null || location.state.current === undefined){
+  // pathnameをcurrentPageのpathとして入れる
+  if(location.state === null || 
+    location.state === undefined || 
+    location.state.current === null || 
+    location.state.current === undefined){
     location.state = {
       current: `${location.pathname}`
     }
   }
-
   console.log('mdx current:', location.state)
   // seo.jsと共に実装
   let imagePathBase = `../images/bookshelf.jpg`
@@ -34,30 +34,7 @@ const BlogPost = ({ data, location }) => {
     imagePathBase = `../../blog/images/${data.mdx.slug}/${data.mdx.frontmatter.topImage.base}`
   }
   // seo.jsと共に実装, ここまで
-  // ここを通ると必ずlocation.state.currentが入るようにする
-  // {typeof(location) ? location.state = {current: data.mdx.slug} : console.log('no location')}
-  console.log('location.state:', location.state)
-  // 前ページ、次ページを決める
-  let pagePointer = (data, state = location.state) => {
-    let index = data.allMdx.nodes.findIndex((node) => `/blog/${node.slug}` === state.current)
-      console.log('current index:', index)
-    if(!state.previous){
-      console.log('no previous')
-      if(index+1 < data.allMdx.nodes.length){
-        state.previous = `/blog/${data.allMdx.nodes[index+1].slug}`
-      }
-      console.log('added previous:', state.previous)
-    }
-    if(!state.next){
-      console.log('no next')
-      if(index > 0){
-        state.next = `/blog/${data.allMdx.nodes[index-1].slug}`
-      }
-      console.log('added next:', state.next)
-    }
-    return state
-  }
-  console.log('pagePointer:', pagePointer(data))
+  //console.log('return value:', pageState(location))
   return (
     <Layout 
       pageTitle={data.mdx.frontmatter.title} 
@@ -73,7 +50,7 @@ const BlogPost = ({ data, location }) => {
         {data.mdx.body}
       </MDXRenderer>
       <PreviousNext 
-        previousNext={pagePointer(data)}
+        previousNext={pageState(location)}
       />
     </Layout>
   )

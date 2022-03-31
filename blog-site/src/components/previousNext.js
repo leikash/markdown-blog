@@ -13,7 +13,7 @@ const PreviousNext = ({ previousNext }) => {
       <ul className={linkStyle}>
         <li className={prevStyle}>
           {previousNext.previous ? 
-            <Link to={`${previousNext.previous}`}>
+            <Link to={`${previousNext.previous.path}`}>
               ◀ Prev
             </Link>
             :
@@ -22,7 +22,7 @@ const PreviousNext = ({ previousNext }) => {
         </li>
         <li className={nextStyle}>
             {previousNext.next ? 
-            <Link to={`${previousNext.next}`}>
+            <Link to={`${previousNext.next.path}`}>
               Next ▶
             </Link>
             :
