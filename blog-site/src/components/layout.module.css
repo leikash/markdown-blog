@@ -9,7 +9,7 @@ https://www.gatsbyjs.com/docs/tutorial/part-2/
 /* Header部分のスタイル */
 .site-title {
   font-family: "Montserrat";
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #2b5c41;
   font-weight: 800;
   padding: 0rem 0.2rem;
@@ -17,7 +17,7 @@ https://www.gatsbyjs.com/docs/tutorial/part-2/
   text-decoration: none!important;
 }
 .site-title:before {
-  content: url(../images/logo_green_mango_48px.png);
+  content: url(../images/logo_green_mango_40px.png);
 }
 .nav-style{
   font-family: "Montserrat";
