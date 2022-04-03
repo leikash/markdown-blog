@@ -1,5 +1,5 @@
 ---
-title: サイト構築からMarkdownファイルの読み取り
+title: サイト構築してブラウザにMarkdownファイルを表示する
 date: "2022-03-13"
 topImage: "images/blog-001-create-blog-site/site_construction.jpg"
 summary: "外部サイト「基礎から始めるGatsbyJS入門」を参照してGatsbyを使ったサイト構築しました。具体的な手順は参照先サイトを見てもらえばわかります。"
@@ -7,53 +7,70 @@ category: web-developer
 tags: ['システム開発','Gatsby', 'React']
 ---
 
-# サイト構築からMarkdownファイルの読み取り
+# サイト構築してMarkdownファイルを表示する
 
-当初は、ヘッドレスCMSを使ってブログサイトを構築しようとしていました。  
-ただ、デザインはテンプレートを使うのではなく、自分でやる方針です。  
-そうすると、APIで受け取ったHTMLをデコレーションする必要があります。  
-ただ、それはローカルでMarkdownを書いて、変換されたHTMLをデコレーションするのはほぼ同じです。  
+## この記事に書いてあること
+Gatsbyを使ってWebサイトを構築するために参照したサイトの情報や補足を書いています。  
+参照先の手順でそのままできることは書いていません。  
+サイトを構築して、ブログ記事のもとになるMarkdownファイルを表示するまでを書いています。  
 
-コンテンツは自分で書いて管理するので、Markdownで書いて、ローカルに保存するのが一番簡単ということに気づきました。
+## サイト構築のステップ
+- Githubでリポジトリ作成する
+- Gatsbyで空のサイトを作成する
+- サンプル記事を作成する
+- コードを書く
+- 起動してブラウザで表示されることを確認する
 
-そこで、一旦サイトをMarkdownで記事を書く方向でサイトを作り直します。
-外部サイト[「基礎から始めるGatsbyJS入門」](https://reffect.co.jp/react/gatsby-basic-tutorial-for-beginners)を参照してGatsbyを使ったサイト構築しました。具体的な手順は参照先サイトを見てもらえばわかります。  
+## 参照先
+外部サイト[「基礎から始めるGatsbyJS入門」](https://reffect.co.jp/react/gatsby-basic-tutorial-for-beginners)を参照してGatsbyを使ったサイト構築しました。  
 
-## 1. Githubでリポジトリ作成
+## 1. Githubでリポジトリ作成する
 レポジトリ名を決めて新たにレポジトリを作成します  
 
 ```bash:title=bash
 $ git clone https://github.com/gituraccount/markdown-blog.git
 ```
 
-## 2. Gatsbyで空のサイトを作成
+## 2. Gatsbyで空のサイトを作成する
 
-ここを参考にして作成しました。  
-ここに書いてあるとおりにコマンドを打っていけば出来上がります。
-[基礎から始めるGatsbyJS入門](https://reffect.co.jp/react/gatsby-basic-tutorial-for-beginners)
+ここに書いてあるとおりにコマンドを打っていけば出来上がります。  
+[基礎から始めるGatsbyJS入門](https://reffect.co.jp/react/gatsby-basic-tutorial-for-beginners)  
 
 ```bash:title=bash
 $ gatsby new blog-site https://github.com/gatsbyjs/gatsby-starter-hello-world
 ```
+Gatsbyではいろいろなテンプレートを選べるのですが、僕はスクラッチで作りたいので、**gatsby-starter-hello-world**を選んでいます。  
 
-## 3. サンプル記事を作成
-公開用の記事をMarkdownで作成します。
+## 3. サンプル記事を作成する
 
-### 3.1 フォルダ構成
-ブログ内に画像を貼り付けるため、予めブログ用画像の保存フォルダを作成します。  
-srcフォルダ外に`blog/image/`フォルダを作成します。  
-各ブログページ用の画像フォルダを別々に作成します。  
-例: `blog/image/blog-001-create-blog-site`  
+srcフォルダ外に以下の2つのフォルダを作成します。
+- *blog*
+- *blog/image/*
 
-### 3.2 Markdownを加工せずに公開
-見た目は悪くても公開できるように、まずはMarkdownのまま公開してみます。  
+*blog*直下にMarkdownファイルを作成します。
+写真の添付を行う場合、*blog/image/*配下に格納します。
 
-[GatsbyJSでのGraphQLの使い方](https://reffect.co.jp/react/gatsby-basic-tutorial-for-beginners-2)を参照して進めます。  
+## 4. GraphQLでMarkdownファイルを取り出して表示するコードを書く
+[GatsbyJSでのGraphQLの使い方](https://reffect.co.jp/react/gatsby-basic-tutorial-for-beginners-2)の通りにコーディングすると
 
-そのままやれば表示表示されました。  
-ただし、HTMLをきれいに表示するにはもうちょっと工夫が必要のようです。  
+## 5. 起動確認をして表示を確認する
+```bash:title=bash
+$ yarn run develop
+```
 
-サイト構築からMarkdownファイルの読み取りはここまでです。  
+Chromeで*localhost:8000*にアクセスして、表示されることを確認します。
+HTMLをきれいに表示するにはもうちょっと工夫が必要のようです。  
+
+## 余談
+当初は、ヘッドレスCMSを使ってブログサイトを構築しようとしていました。  
+ただ、デザインはテンプレートを使うのではなく、自分でやる方針です。  
+そうすると、APIで受け取ったHTMLをデコレーションする必要があります。  
+ただ、それはローカルでMarkdownを書いて、変換されたHTMLをデコレーションするのはほぼ同じです。  
+
+コンテンツは自分で書いて管理するので、Markdownで書いて、ローカルに保存するのが一番簡単ということに気づきました。  
+そこで、一旦サイトをMarkdownで記事を書く方向でサイトを作り直しました。  
+
+「サイト構築してブラウザにMarkdownファイルを表示する」はここまでです。  
 もっと具体的な手順を書く予定でしたが、外部サイト[「基礎から始めるGatsbyJS入門」](https://reffect.co.jp/react/gatsby-basic-tutorial-for-beginners)をそのまま実行すれば簡単にできてしまうため、書いていません。  
 Webサイトを立ち上げるだけであれば簡単にできる時代になりました。  
 
