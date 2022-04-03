@@ -8,21 +8,33 @@
 .title-style:before {
   content: "🍍";
 }
+.blog-top-image{
+  text-align: center;
+  margin: 0 4px;
+}
+.blog-top-image-img{
+  border-radius: 2rem;
+}
 .blog-link{
   text-decoration: none;
   color: #2b5c41;
 }
 .blog-list-border{
-  margin: 1.5rem 5%;
-  border: solid 1px;
+  margin: 2rem 5%;
+  border: solid 3px;
   border-color: #FEB435;
-  border-radius: 0.5rem;
+/*  border-radius: 0.5rem; */
   background-color: whitesmoke;
+  box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
+	transition: .3s;
 }
 .blog-list-border:hover{
-  text-decoration:underline;
   background-color: white;
+  box-shadow: 0 15px 30px -5px rgba(0,0,0,.15), 0 0 5px rgba(0,0,0,.1);
+	transform: translateX(-5px) translateY(-5px);
+  text-decoration: underline dotted #FEB435;
 }
+
 .blog-link-text{
   font-size: 1.5rem;
   font-weight: 700;
@@ -33,7 +45,7 @@
 }
 .blog-date-text{
   font-size: 0.9rem;
-  padding: 0rem 0.5rem;
+  padding: 0rem 3rem;
   color: #444
 }
 .blog-summary-text{

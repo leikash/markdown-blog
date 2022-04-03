@@ -5,15 +5,18 @@ https://www.gatsbyjs.com/docs/tutorial/
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/layout'
+import TopImage from '../../components/topImage'
 import {
   titleStyle,
-  blogListBackground,
+  blogTopImage,
+  blogTopImageImg,
   blogLink,
   blogListBorder,
   blogLinkText,
   blogDateText,
   blogSummaryText,
 } from './index.module.css'
+
 
 const BlogPage = ({ data }) => {
   console.log(data.allMdx.nodes)
@@ -23,24 +26,27 @@ const BlogPage = ({ data }) => {
       <h1 className={titleStyle}>Blog</h1>
       <div>
       {
-        data.allMdx.nodes.map((node, index) => (
-          <div key={node.id}>
+        data.allMdx.nodes.map((node) => (
+          <article key={node.id}>
           <Link to={`/blog/${node.slug}`}
             className={blogLink}
           >
             <div className={blogListBorder}>
+              <div className={blogLinkText}>
+                {node.frontmatter.title}
+              </div>
               <div className={blogDateText}>
                 Last updated: {node.frontmatter.date}
               </div>
-              <div className={blogLinkText}>
-                {node.frontmatter.title}
+              <div className={blogTopImage}>
+                <TopImage className={blogTopImageImg} node={node.frontmatter}/>
               </div>
               <div className={blogSummaryText}>
                 {node.frontmatter.summary}
               </div>
             </div>
           </Link>
-          </div>
+          </article>
         ))
       }
       </div>
@@ -56,6 +62,11 @@ export const query = graphql`
           date
           title
           summary
+          topImage{
+            childImageSharp {
+              gatsbyImageData(width: 750)
+            }
+          }
         }
         id
         slug

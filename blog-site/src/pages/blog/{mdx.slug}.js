@@ -5,6 +5,7 @@ import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../../components/layout'
 import PreviousNext from '../../components/previousNext'
 import pageState from '../../components/pageState'
+import TopImage from '../../components/topImage'
 import { blogTitle, topImage, topDate } from './{mdx.slug}.module.css' 
 
 // ブラウザのタブにタイトルを出すために使っているのでこのままにする
@@ -34,7 +35,7 @@ const BlogPost = ({ data, location }) => {
       <div className={blogTitle}>{data.mdx.frontmatter.title}</div>
       <div className={topDate}>Last updated: {data.mdx.frontmatter.date}</div>
       <div className={topImage}>
-        <DecidedTopImage topImage={data.mdx.frontmatter.topImage} />
+        <TopImage node={data.mdx.frontmatter}/>
       </div>
       <MDXRenderer>
         {data.mdx.body}
