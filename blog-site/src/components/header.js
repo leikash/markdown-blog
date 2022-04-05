@@ -1,6 +1,13 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
-import { StaticImage } from "gatsby-plugin-image"
+import {
+  navStyle,
+  navLinks,
+  navLinkItem,
+  navLinkText,
+  siteTitle,
+  headerPosition,
+} from './header.module.css'
 
 const Header = () => {
   const data = useStaticQuery(
@@ -16,21 +23,23 @@ const Header = () => {
   );
   return (
     <header>
-      <Link to="/">
-            <h1>
-              header, {data.site.siteMetadata.siteName}
-            </h1>
-            <div>
-              We wish fruitful life
-            </div>
-      </Link>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
+      <div className={headerPosition}>
+        <Link to="/" className={siteTitle}>{data.site.siteMetadata.siteName}</Link>
+      <nav className={navStyle}>
+        <ul className={navLinks}>
+          <li className={navLinkItem}>
+            <Link to="/" className={navLinkText}>
+              Home
+            </Link>
+          </li>
+          <li className={navLinkItem}>
+            <Link to="/blog" className={navLinkText}>
+              Blog
+            </Link>
+          </li>
         </ul>
       </nav>
-      <br/>
+      </div>
     </header>
   )
 }

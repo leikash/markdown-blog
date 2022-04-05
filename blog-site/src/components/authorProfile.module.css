@@ -1,0 +1,30 @@
+.author-profile-style{
+  border: dashed 1px;
+  border-radius: 5px;
+  background-color: white;
+/*  box-shadow: 3px 3px 10px #AAA; */
+  margin: 0 20%;
+}
+.author-profile-list{
+  list-style-type: none!important;
+  margin: 1rem 0.5rem 1rem 2rem;
+}
+.author-profile-item {
+  margin: 0 0.25rem 0 -1rem;
+}
+.author-profile-text {
+  font-size: 1rem;
+  color: #2b5c41;
+  font-weight: 600;
+  text-decoration: none;
+}
+.author-profile-text-detail {
+    font-size: 1rem;
+    color: #444444;
+    font-weight: 200;
+    text-decoration: none;
+  }
+.author-profile-ad-style{
+    margin: 0.5rem auto -2.5rem -1.5rem;
+    text-decoration: none!important;
+}

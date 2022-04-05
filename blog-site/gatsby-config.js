@@ -13,6 +13,7 @@ module.exports = {
     siteOgpImage: "images/ElNido.jpg",
     siteCategory: ["React", "Webサイト構築"],
     siteUser: { name: "Karashlei", email: "karashlei@gmail.com" },
+    siteAuthorProfile:"セブ島でオフショア開発のマネージャーをしています。"
   },
   plugins: [
     // メタデータ管理に使用する

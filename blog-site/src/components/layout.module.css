@@ -4,45 +4,26 @@ https://www.gatsbyjs.com/docs/tutorial/part-2/
 /* ページ全体のスタイル */
 .container {
   margin: 1rem auto;
-  max-width: 750px;
+  max-width: 1080px;
 }
 /* Header部分のスタイル */
-.site-title {
-  font-family: "Montserrat";
-  font-size: 2.5rem;
-  color: #2b5c41;
-  font-weight: 800;
-  padding: 0rem 0.2rem;
-  margin: 2rem 0rem 0rem auto;
-  text-decoration: none!important;
-}
-.site-title:before {
-  content: url(../images/logo_green_mango_40px.png);
-}
-.nav-style{
-  font-family: "Montserrat";
-}
-.nav-links {
-  display: flex;
-  list-style-type: none!important;
-}
-.nav-link-item {
-  margin: 0 1rem;
-}
-.nav-link-text {
-  font-size: 1rem;
-  color: #444444;
-  font-weight: 600;
-  text-decoration: none;
-}
-.nav-link-text:hover {
-  color: #FEB435;
-  font-weight: 600;
-}
 /* メイン部分のスタイル */
+.set-side-bar{
+  width: 960px;
+  margin: 0 auto 50px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
 .main-part {
   font-family: "Roboto", "Noto Sans JP";
   padding: 0.1rem 0.5rem;
   background: #FFFFEF;
   border-radius: 0.5rem;
+  flex-basis: 750px;
 }
+/*
+.side-bar{
+  flex-basis: 10px;
+}
+*/

@@ -1,0 +1,40 @@
+.site-title {
+  font-family: "Montserrat";
+  font-size: 2.5rem;
+  color: #2b5c41;
+  font-weight: 800;
+  padding: 0rem 0.2rem;
+  margin: 2rem 0rem 0rem auto;
+  text-decoration: none!important;
+}
+.site-title:before {
+  content: url(../images/logo_green_mango_40px.png);
+}
+.site-title:hover{
+  color: #FEB435;
+}
+.header-position{
+  text-align: center;
+}
+.nav-style{
+  font-family: "Montserrat";
+}
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style-type: none!important;
+}
+.nav-link-item {
+  margin: 0 5%;
+}
+.nav-link-text {
+  margin-left: -1rem;
+  font-size: 1rem;
+  color: #444444;
+  font-weight: 600;
+  text-decoration: none;
+}
+.nav-link-text:hover {
+  color: #FEB435;
+  font-weight: 600;
+}
