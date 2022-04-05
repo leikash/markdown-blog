@@ -3,7 +3,7 @@
   border-radius: 5px;
   background-color: white;
 /*  box-shadow: 3px 3px 10px #AAA; */
-  margin: 0 20%;
+  margin: 0.5rem 20%;
 }
 .author-profile-list{
   list-style-type: none!important;

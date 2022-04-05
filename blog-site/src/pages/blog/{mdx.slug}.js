@@ -5,8 +5,8 @@ import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../../components/layout'
 import PreviousNext from '../../components/previousNext'
 import pageState from '../../components/pageState'
-import TopImage from '../../components/topImage'
-import { blogTitle, topImage, topDate } from './{mdx.slug}.module.css' 
+import TopImageTag from '../../components/topImageTag'
+import { blogTitle, topImagePosition, topDate } from './{mdx.slug}.module.css' 
 
 // ブラウザのタブにタイトルを出すために使っているのでこのままにする
 // pageTitle={data.mdx.frontmatter.title}
@@ -34,8 +34,8 @@ const BlogPost = ({ data, location }) => {
     >
       <div className={blogTitle}>{data.mdx.frontmatter.title}</div>
       <div className={topDate}>Last updated: {data.mdx.frontmatter.date}</div>
-      <div className={topImage}>
-        <TopImage node={data.mdx.frontmatter}/>
+      <div className={topImagePosition}>
+        <TopImageTag node={data.mdx.frontmatter}/>
       </div>
       <MDXRenderer>
         {data.mdx.body}
@@ -49,28 +49,6 @@ const BlogPost = ({ data, location }) => {
 
 // SEO対策はここを見ながら入れました。
 // https://moon-forest-design.github.io/memo/gatsbyjs-seo/
-
-const DecidedTopImage = (topImage) => {
-  // 記事のトップ画像を取り込む
-  if(getImage(topImage)){
-    // 記事のトップ画像があるときのタグ
-    return(
-      <GatsbyImage
-        image={getImage(topImage)}
-        alt="${topImage.title}"
-      />
-    )
-  }else{
-    // 記事のトップ画像がないときのタグ
-    return(
-      <StaticImage
-        src='../../images/bookshelf.jpg'
-        alt='Karashlei lab.'
-        width={750}
-      />
-    )
-  }
-}
 
 export const query = graphql`
   query ($id: String) {

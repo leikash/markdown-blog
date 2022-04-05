@@ -2,7 +2,7 @@ import React from "react"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 
 // 静的イメージ動的イメージのタグを決定して出力する
-const TopImage = (frontmatter) => {
+const TopImageTag = (frontmatter) => {
   console.log('topImage: ', frontmatter)
   let imageWidth = 750
   if(frontmatter.node.topImage){
@@ -31,4 +31,4 @@ const TopImage = (frontmatter) => {
   }
 }
 
-export default TopImage
+export default TopImageTag

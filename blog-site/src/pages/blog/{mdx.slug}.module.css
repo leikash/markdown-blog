@@ -10,7 +10,7 @@ https://gotohayato.com/content/451/#:~:text=%E3%82%84%E3%82%8A%E6%96%B9-,CSS%20%
 .blog-title:before {
   content: "🍉";
 }
-.top-image {
+.top-image-position {
   text-align: center;
   margin-bottom: 1rem;
   /* position: relative; 写真と重ねるときに使う */

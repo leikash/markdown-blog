@@ -5,7 +5,7 @@ https://www.gatsbyjs.com/docs/tutorial/
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/layout'
-import TopImage from '../../components/topImage'
+import TopImageTag from '../../components/topImageTag'
 import {
   titleStyle,
   blogTopImage,
@@ -39,7 +39,7 @@ const BlogPage = ({ data }) => {
                 Last updated: {node.frontmatter.date}
               </div>
               <div className={blogTopImage}>
-                <TopImage className={blogTopImageImg} node={node.frontmatter}/>
+                <TopImageTag className={blogTopImageImg} node={node.frontmatter}/>
               </div>
               <div className={blogSummaryText}>
                 {node.frontmatter.summary}

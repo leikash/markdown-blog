@@ -13,11 +13,14 @@ import {
 import Seo from '../components/seo'
 
 const isSmartPhone = () => {
+  return false;
+  /*
   if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
     return true;
   } else {
     return false;
   }
+  */
 }
 console.log('isSmartPhone;', isSmartPhone())
 
