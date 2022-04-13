@@ -1,0 +1,121 @@
+---
+title: 【Gatsbyでブログサイト構築 その３】MDXプラグインでMarkdown記事を表示する  
+date: "2022-03-19"  
+topImage: images/blog_002_publish_markdown/blog_publish_markdown.jpg
+summary: "MDXプラグインを使ってmarkdownで作成した記事を表示する方法を書いています。"
+---
+
+# Markdownファイルを公開
+
+## この記事に書いてあること
+
+MDXプラグインを使ってmarkdownで作成した記事を表示する方法を書いています。  
+
+## 1. ファイル拡張子を変更
+作成済みのmarkdownファイルの拡張子をすべて`.mdx`に変更します。  
+`.md`のままだと読み込まれません。  
+
+## 2. 関連プラグインのインストール
+MDXプラグインを使用するためのプラグインをインストールします。
+```bash:title=bash
+$ yarn add gatsby-plugin-mdx @mdx-js/mdx@v1 @mdx-js/react@v1
+```
+
+## 3. gatsby-config.jsに設定を追加
+プラグインをインストールしたので、gatsby-config.jsに追加します。  
+```javascript:title=gatsby-config.js
+module.exports = {
+  plugins: [
+    "gatsby-plugin-mdx",
+  ]
+```
+
+## 4. クエリの追加
+blog.jsに記事リストを取得するためのクエリを追加します。  
+frontmatter配下のデータ(date, title)はそれぞれのmdxファイルのヘッダから取ってきます。  
+チュートリアルではdateのフォーマッティングを`(formatString: "MMMM D, YYYY")`を付けて行っているのですが、1記事でもフォーマットを間違うとビルドエラーになるため、僕は外しています。  
+
+```javascript:title=blog.js
+import * as React from 'react'
+import { graphql } from 'gatsby'
+import Layout from '../components/layout'
+
+const BlogPage = ({ data }) => {
+  return (
+    // ...
+  )
+}
+
+export const query = graphql`
+  query {
+    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+      nodes {
+        frontmatter {
+          date
+          title
+        }
+        id
+        body
+      }
+    }
+  }
+`
+
+export default BlogPage
+```
+
+## 5. Markdown記事を表示する部分を追加
+MDXRendererをimportします  
+graphqlで読み込んだデータを引数として渡します。  
+map関数のkeyにはidが入るようにします。  
+日付はfrontmatterの値をそのまま出します。  
+MDXRendererタグでMarkdown記事をHTMLに変換して表示してくれます。  
+
+```javascript:title=blog.js
+import * as React from 'react'
+import { graphql } from 'gatsby'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import Layout from '../components/layout'
+
+const BlogPage = ({ data }) => {
+  return (
+    <Layout pageTitle="My Blog Posts">
+      {
+        data.allMdx.nodes.map((node) => (
+          <article key={node.id}>
+            <h2>{node.frontmatter.title}</h2>
+            <p>Posted: {node.frontmatter.date}</p>
+            <MDXRenderer>
+              {node.body}
+            </MDXRenderer>
+          </article>
+        ))
+      }
+    </Layout>
+  )
+}
+
+export const query = graphql`
+  query {
+    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+      nodes {
+        frontmatter {
+          title
+          date(formatString: "MMMM DD, YYYY")
+        }
+        id
+        body
+      }
+    }
+  }
+`
+
+export default BlogPage
+```
+
+作成したMarkdown記事が縦につながって表示されれば、動作確認OKです。  
+
+Markdownファイルを公開はここまでです。  
+次回は、縦につながって表示されている記事を別々のページに分離して表示する方法を記載します。  
+
+お読みいただきありがとうございました。  
